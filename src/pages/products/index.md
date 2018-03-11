@@ -1,6 +1,5 @@
 ---
-templateKey: 'product-page'
-path: /products
+templateKey: product-page
 title: Our Coffee
 image: /img/jumbotron.jpg
 heading: What we offer
@@ -73,29 +72,32 @@ full_image: /img/products-full-width.jpg
 pricing:
   heading: Monthly subscriptions
   description: >-
-    We make it easy to make great coffee a part of your life. Choose one of our
-    monthly subscription plans to receive great coffee at your doorstep each
-    month. Contact us about more details and payment info.
+    GDevelop is open-source and can be used freely. A few online services like
+    one-click Android packaging can be unlocked by having a subscription. You'll
+    also support the future development of GDevelop!
   plans:
-    - description: Perfect for the drinker who likes to enjoy 1-2 cups per day.
+    - description: You can use GDevelop for free!
       items:
-        - 3 lbs of coffee per month
-        - Green or roasted beans"
-        - One or two varieties of beans"
-      plan: Small
-      price: '50'
-    - description: 'Great for avid drinkers, java-loving couples and bigger crowds'
+        - Online packaging for Android is limited to twice a day.
+      plan: Free
+      price: '0'
+    - description: Ideal for beginners
       items:
-        - 6 lbs of coffee per month
-        - Green or roasted beans
-        - Up to 4 different varieties of beans
-      plan: Big
-      price: '80'
-    - description: Want a few tiny batches from different varieties? Try our custom plan
+        - Allow to package your game for Android up to 10 times a day.
+        - >-
+          Use Live Preview over Wifi to quickly test your game on mobiles and
+          tablets
+        - Immerse your players by removing GDevelop logo when the game loads
+      plan: Indie
+      price: '2'
+    - description: Ideal for advanced game makers
       items:
-        - Whatever you need
-        - Green or roasted beans
-        - Unlimited varieties
-      plan: Custom
-      price: '??'
+        - Allow to package your game for Android up to 70 times a day.
+        - >-
+          Use Live Preview over Wifi to quickly test your game on mobiles and
+          tablets
+        - Immerse your players by removing GDevelop logo when the game loads
+      plan: Pro
+      price: '7'
 ---
+
