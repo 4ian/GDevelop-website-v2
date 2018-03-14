@@ -20,3 +20,11 @@ export const media = Object.keys(sizes).reduce((accumulator, label) => {
   `;
   return accumulator;
 }, {});
+
+// Quick hack to detect IE10 and IE11 in CSS
+// Should be replaced by Modernizr or something similar.
+export const ie10and11 = (...args) => css`
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    ${css(...args)};
+  }
+`;
