@@ -7,6 +7,8 @@ const RightImage = styled.img`
   position: relative;
   left: 60px;
   box-shadow: 0 4px 15px 0 #9B9B9B;
+  margin-bottom: 15px;
+  margin-top: 10px;
 
   ${media.tablet`
     max-width: 100%;
