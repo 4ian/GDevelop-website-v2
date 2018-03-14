@@ -1,48 +1,49 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from 'react';
+import Link from 'gatsby-link';
+import BigTitle from '../components/BigTitle';
+import Paragraph from '../components/Paragraph';
+import BigButton from '../components/BigButton';
+import BannerContainer from '../components/Containers/BannerContainer';
+import TransparentContainer from '../components/Containers/TransparentContainer';
+import WhiteBigTitle from '../components/WhiteBigTitle';
+import WhiteParagraph from '../components/WhiteParagraph';
+import WhiteBigButton from '../components/WhiteBigButton';
 
 export default class IndexPage extends React.Component {
   render() {
-    const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
-
     return (
-      <section className="section">
-        <div className="container">
-          <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
-          </div>
-          {posts
-            .filter(post => post.node.frontmatter.templateKey === 'blog-post')
-            .map(({ node: post }) => (
-              <div
-                className="content"
-                style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
-                key={post.id}
-              >
-                <p>
-                  <Link className="has-text-primary" to={post.fields.slug}>
-                    {post.frontmatter.title}
-                  </Link>
-                  <span> &bull; </span>
-                  <small>{post.frontmatter.date}</small>
-                </p>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button is-small" to={post.fields.slug}>
-                    Keep Reading →
-                  </Link>
-                </p>
-              </div>
-            ))}
-        </div>
-      </section>
-    )
+      <div>
+        <TransparentContainer>
+          <BigTitle>Create your own games</BigTitle>
+          <Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam
+          </Paragraph>
+          <BigButton>Try it online</BigButton>
+          <BigButton>Download</BigButton>
+          <BigTitle>Events - game creation for everyone</BigTitle>
+          <Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam
+          </Paragraph>
+        </TransparentContainer>
+        <BannerContainer>
+          <WhiteBigTitle>Create your own games</WhiteBigTitle>
+          <WhiteParagraph>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam
+          </WhiteParagraph>
+          <WhiteBigButton>Try it online</WhiteBigButton>
+        </BannerContainer>
+      </div>
+    );
   }
 }
 
+//TODO: remove?
 export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
@@ -62,4 +63,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
