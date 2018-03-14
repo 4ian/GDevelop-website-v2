@@ -4,8 +4,7 @@ import { media } from '../../lib/media';
 
 const Row = styled.div`
   display: flex;
-  flex-direction: row;
-  flex: 1;
+  flex-direction: ${props => (props.reverse ? 'row-reverse' : 'row')};
 
   ${media.tablet`
     display: block;

@@ -6,8 +6,8 @@ const BigTitle = styled.h1`
   line-height: 89px;
   font-family: 'Lobster', Arial, sans-serif;
   display: inline-block;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 
   background-image: linear-gradient(
     45deg,

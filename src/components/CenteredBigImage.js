@@ -4,6 +4,8 @@ import { media } from '../lib/media';
 
 const CenteredBigImage = styled.img`
   max-width: ${props => props.maxWidth};
+  margin-top: 20px;
+  margin-bottom: 10px;
 
   ${media.tablet`
     max-width: 90%;
