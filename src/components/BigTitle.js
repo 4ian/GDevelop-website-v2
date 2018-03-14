@@ -21,6 +21,8 @@ const BigTitle = styled.h1`
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+
+  text-shadow: 0px 2px 2px rgba(0,0,0,0.05);
 `;
 
 export default ({ children }) => (
