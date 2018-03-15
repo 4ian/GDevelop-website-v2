@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ie10and11 } from '../lib/media';
+import { media, ie10and11 } from '../lib/media';
 
 const BigTitle = styled.h1`
   font-size: 72px;
   line-height: 89px;
   font-family: 'Lobster', Arial, sans-serif;
   display: inline-block;
-  margin-top: 15px;
+  margin-top: 25px;
   margin-bottom: 15px;
 
   background-image: linear-gradient(
@@ -29,6 +29,10 @@ const BigTitle = styled.h1`
     color: #3c4698;
     background-image: none;
     background: none;
+  `};
+
+  ${media.tablet`
+    text-align: center;
   `};
 `;
 
