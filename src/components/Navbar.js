@@ -95,6 +95,10 @@ const Navbar = () => (
         </Link>
       </LeftContainer>
       <RightContainer>
+        <NavLink href="http://wiki.compilgames.net/doku.php/gdevelop5/start">
+          Tutorials
+        </NavLink>
+        <NavLink href="http://forum.compilgames.net">Community</NavLink>
         <NavLink
           href="https://github.com/4ian/GD"
           target="_blank"
