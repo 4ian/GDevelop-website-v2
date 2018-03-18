@@ -21,13 +21,21 @@ import CenteredRow from '../components/Grid/CenteredRow';
 import Column from '../components/Grid/Column';
 import CenteredColumn from '../components/Grid/CenteredColumn';
 import GameThumbnail from '../components/GameThumbnail';
+import Spacer from '../components/Grid/Spacer';
 
 export default class EducationPage extends React.Component {
   render() {
     return (
       <div>
+        <BannerContainer>
+          <WhiteBigTitle>Games showcase</WhiteBigTitle>
+          <WhiteParagraph>
+            Here are a few games created with GDevelop. The next one should be
+            yours!
+          </WhiteParagraph>
+        </BannerContainer>
+        <Spacer height="50px" />
         <TransparentContainer>
-          <BigTitle>Games showcase</BigTitle>
           <Row>
             <Column>
               <GameThumbnail src={bios} />
@@ -44,13 +52,12 @@ export default class EducationPage extends React.Component {
           </Row>
         </TransparentContainer>
         <BannerContainer>
-          <WhiteBigTitle>Make your first game</WhiteBigTitle>
+          <WhiteBigTitle>Make your own game</WhiteBigTitle>
           <WhiteParagraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam
+            With GDevelop, you too can create impressive games from scratch!
           </WhiteParagraph>
           <WhiteBigButton>Try it online</WhiteBigButton>
+          <WhiteBigButton>Download</WhiteBigButton>
         </BannerContainer>
       </div>
     );

@@ -55,6 +55,9 @@ export default () => (
       </FooterText>
       <Row>
         <Column>
+          <Link to="/download/">
+            <FooterLink>Download the editor</FooterLink>
+          </Link>
           <FooterLink href="https://editor.gdevelop-app.com">
             Online game editor
           </FooterLink>
@@ -64,9 +67,6 @@ export default () => (
           <FooterLink href="http://wiki.compilgames.net/doku.php/gdevelop5/start">
             Documentation &amp; tutorials
           </FooterLink>
-          <Link to="/contribute/">
-            <FooterLink>Contribute</FooterLink>
-          </Link>
         </Column>
         <Column>
           <Link to="/features/">
@@ -77,6 +77,9 @@ export default () => (
           </Link>
           <Link to="/games-showcase/">
             <FooterLink>Games showcase</FooterLink>
+          </Link>
+          <Link to="/contribute/">
+            <FooterLink>Contribute</FooterLink>
           </Link>
         </Column>
       </Row>

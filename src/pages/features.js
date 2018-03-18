@@ -1,23 +1,12 @@
 import React from 'react';
-import Link from 'gatsby-link';
 import BigTitle from '../components/BigTitle';
-import Paragraph from '../components/Paragraph';
-import BigButton from '../components/BigButton';
 import BannerContainer from '../components/Containers/BannerContainer';
 import TransparentContainer from '../components/Containers/TransparentContainer';
 import WhiteBigTitle from '../components/WhiteBigTitle';
 import WhiteParagraph from '../components/WhiteParagraph';
 import WhiteBigButton from '../components/WhiteBigButton';
-import CenteredBigImage from '../components/CenteredBigImage';
-import RightImage from '../components/RightImage';
-import ExplanationText from '../components/ExplanationText';
 
-import phoneWithGame from '../img/phone-with-game.png';
-import landingScreen from '../img/landing-screen.png';
-import Row from '../components/Grid/Row';
 import CenteredRow from '../components/Grid/CenteredRow';
-import Column from '../components/Grid/Column';
-import CenteredColumn from '../components/Grid/CenteredColumn';
 import Spacer from '../components/Grid/Spacer';
 import { List, ListItem } from '../components/List';
 

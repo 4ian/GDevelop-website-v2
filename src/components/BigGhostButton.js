@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const BigButton = styled.a`
+const BigGhostButton = styled.a`
   min-height: 56px;
   min-width: 200px;
   padding: 15px;
@@ -13,20 +13,20 @@ const BigButton = styled.a`
   font-weight: bold;
   text-transform: uppercase;
 
-  background: #51509c;
+  background: transparent;
 
   border-radius: 4px;
-  box-shadow: 0 0px 0px 0 #51509c;
+  border: 1px solid #51509c;
+  color: #51509c;
 
   font-size: 20px;
-  color: white;
 
   transition: box-shadow 0.3s ease-in-out;
 
   &:hover {
-    color: white;
-    box-shadow: 0 2px 6px 0 #51509c;
+    color: #51509c;
+    box-shadow: 0 0px 6px 0 #51509c;
   }
 `;
 
-export default BigButton;
+export default BigGhostButton;

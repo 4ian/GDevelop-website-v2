@@ -1,8 +1,6 @@
 import React from 'react';
-import Link from 'gatsby-link';
 import BigTitle from '../components/BigTitle';
 import Paragraph from '../components/Paragraph';
-import BigButton from '../components/BigButton';
 import BannerContainer from '../components/Containers/BannerContainer';
 import TransparentContainer from '../components/Containers/TransparentContainer';
 import LandingContainer from '../components/Containers/LandingContainer';
@@ -15,7 +13,6 @@ import ExplanationText from '../components/ExplanationText';
 
 import events from '../img/events.png';
 import gamesOnMobileTabletDesktopWeb from '../img/games-on-mobile-tablet-desktop-web.png';
-import phoneWithGame from '../img/phone-with-game.png';
 import landingScreen from '../img/landing-screen.png';
 import platformerSceneEditor from '../img/platformer-scene-editor.png';
 import platformer2SceneEditor from '../img/platformer2-scene-editor.png';
@@ -23,7 +20,6 @@ import spaceShooterSceneEditor from '../img/space-shooter-scene-editor.png';
 import pathfindingTankSceneEditor from '../img/pathfinding-tank-scene-editor.png';
 import Row from '../components/Grid/Row';
 import CenteredRow from '../components/Grid/CenteredRow';
-import Column from '../components/Grid/Column';
 import Spacer from '../components/Grid/Spacer';
 import CenteredColumn from '../components/Grid/CenteredColumn';
 import Carousel from '../components/Carousel';
@@ -117,7 +113,10 @@ export default class IndexPage extends React.Component {
         <Spacer height="50px" />
         <BannerContainer>
           <WhiteBigTitle>Make your first game</WhiteBigTitle>
-          <WhiteParagraph>Imagine and publish your games with GDevelop. Bundled with tutorials and examples.</WhiteParagraph>
+          <WhiteParagraph>
+            Imagine and publish your games with GDevelop. Bundled with tutorials
+            and examples.
+          </WhiteParagraph>
           <CenteredRow>
             <WhiteBigButton>Try it online</WhiteBigButton>
             <WhiteBigButton>Download</WhiteBigButton>

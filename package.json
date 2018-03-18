@@ -15,6 +15,7 @@
     "gatsby-plugin-sass": "^1.0.17",
     "gatsby-plugin-sharp": "^1.6.41",
     "gatsby-plugin-styled-components": "^2.0.9",
+    "gatsby-plugin-twitter": "^1.0.20",
     "gatsby-remark-images": "^1.5.50",
     "gatsby-source-filesystem": "^1.5.23",
     "gatsby-transformer-remark": "^1.7.33",
@@ -36,6 +37,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "eslint": "^4.19.0",
+    "eslint-config-universe": "^1.0.7",
     "prettier": "^1.7.4"
   }
 }
