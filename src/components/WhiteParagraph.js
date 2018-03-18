@@ -6,6 +6,7 @@ const WhiteParagraph = styled.p`
   font-family: 'Roboto', Arial, sans-serif;
   color: white;
   margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 export default WhiteParagraph;

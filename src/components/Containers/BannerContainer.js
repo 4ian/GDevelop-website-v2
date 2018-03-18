@@ -7,7 +7,6 @@ const BannerContainer = styled.div`
   min-height: 20px;
 
   padding: 20px;
-  margin-top: 20px;
   display: block;
   text-align: center;
 

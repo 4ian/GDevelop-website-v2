@@ -12,7 +12,6 @@ import CenteredBigImage from '../components/CenteredBigImage';
 import RightImage from '../components/RightImage';
 import ExplanationText from '../components/ExplanationText';
 
-import event from '../img/event.png';
 import phoneWithGame from '../img/phone-with-game.png';
 import landingScreen from '../img/landing-screen.png';
 import bios from '../img/games/big_bios.jpg';

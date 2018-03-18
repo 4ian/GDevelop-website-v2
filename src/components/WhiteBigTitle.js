@@ -6,7 +6,7 @@ const WhiteBigTitle = styled.h1`
   line-height: 89px;
   font-family: 'Asap', Arial, sans-serif;
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 10px;
   font-weight: 600;
 

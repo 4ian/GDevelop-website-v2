@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { media, ie10and11 } from '../lib/media';
 
 const BigTitle = styled.h1`
-  font-size: 72px;
+  font-size: 64px;
   line-height: 89px;
   font-family: 'Asap', Arial, sans-serif;
   font-weight: 400;
