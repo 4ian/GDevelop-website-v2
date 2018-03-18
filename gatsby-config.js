@@ -5,11 +5,12 @@ module.exports = {
   plugins: [
     `gatsby-plugin-styled-components`,
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass', //TODO: Remove
+    'gatsby-plugin-sass',
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
+          `Asap:400,600`,
           `Lobster`,
           `Roboto`,
         ]

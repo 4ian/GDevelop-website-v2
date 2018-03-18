@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const WhiteBigButton = styled.a`
-  min-height: 74px;
+  min-height: 56px;
   min-width: 200px;
-  padding: 20px;
+  padding: 15px;
   margin: 20px;
   display: inline-block;
   text-align: center;
@@ -16,16 +16,16 @@ const WhiteBigButton = styled.a`
   background-color: white;
 
   border-radius: 4px;
-  box-shadow: 0 2px 4px 0 #9B9B9B;
+  box-shadow: 0 2px 3px 0 #51509C;
 
-  font-size: 24px;
-  color: #4ab0e4;
+  font-size: 20px;
+  color: #51509C;
 
   transition: box-shadow 0.3s ease-in-out;
 
   &:hover {
-    color: #4ab0e4;
-    box-shadow: 0 4px 15px 0 white;
+    color: #51509C;
+    box-shadow: 0 4px 6px 0 #51509C;
   }
 `;
 

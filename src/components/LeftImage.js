@@ -2,9 +2,9 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { media } from '../lib/media';
 
-const appearFromRight = keyframes`
+const appearFromLeft = keyframes`
   from {
-    transform: translateX(70px);
+    transform: translateX(-70px);
     opacity: 0.7;
   }
 
@@ -27,7 +27,7 @@ const fadeIn = keyframes`
 const RightImage = styled.img`
   max-height: 70vh;
   position: relative;
-  left: 60px;
+  right: 60px;
 
   box-shadow: 0 2px 3px 0 #51509C;
   border-radius: 4px;
@@ -35,7 +35,7 @@ const RightImage = styled.img`
   margin-bottom: 15px;
   margin-top: 10px;
 
-  animation: ${appearFromRight} 0.5s ease-out forwards;
+  animation: ${appearFromLeft} 0.5s ease-out forwards;
 
   ${media.tablet`
     max-width: 100%;

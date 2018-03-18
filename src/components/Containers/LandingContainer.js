@@ -1,19 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
+import { media } from '../../lib/media';
 import background from '../../img/background.png';
 
-const BannerContainer = styled.div`
+const LandingContainer = styled.div`
   width:100%;
-  min-height: 20px;
 
-  padding: 20px;
-  margin-top: 20px;
+  padding: 40px;
+  margin-bottom: 20px;
   display: block;
-  text-align: center;
 
   background-image: url(${background});
 
   color: white;
+
+  ${media.tablet`
+    text-align: center;
+  `};
 `;
 
-export default BannerContainer;
+export default LandingContainer;

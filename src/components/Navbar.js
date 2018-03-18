@@ -7,7 +7,8 @@ import github from '../img/github-icon.svg';
 import logo from '../img/logo.svg';
 
 const NavigationBar = styled.nav`
-  padding-top: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   padding-left: 10px;
   padding-right: 10px;
 
@@ -22,7 +23,6 @@ const NavigationBar = styled.nav`
 const Container = styled.div`
   align-items: stretch;
   display: flex;
-  min-height: 5.25rem;
   width: 100%;
 
   ${media.tablet`

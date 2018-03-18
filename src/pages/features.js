@@ -24,6 +24,33 @@ export default class FeaturesPage extends React.Component {
   render() {
     return (
       <div>
+      <BannerContainer>
+        <WhiteBigTitle>Create your own games</WhiteBigTitle>
+        <Row reverse>
+          <CenteredColumn flex={8}>
+            <RightImage src={landingScreen} />
+          </CenteredColumn>
+          <CenteredColumn flex={5}>
+            <Paragraph textAlign="center">
+              GDevelop is an open source, cross-platform game creator designed
+              to be used by everyone - no programming skills required.
+            </Paragraph>
+            <CenteredRow>
+              <WhiteBigButton>Try it online</WhiteBigButton>
+              <WhiteBigButton>Download</WhiteBigButton>
+            </CenteredRow>
+          </CenteredColumn>
+        </Row>
+      </BannerContainer>
+      <BannerContainer>
+        <WhiteBigTitle>Make your first game</WhiteBigTitle>
+        <WhiteParagraph>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam
+        </WhiteParagraph>
+        <WhiteBigButton>Try it online</WhiteBigButton>
+      </BannerContainer>
         <TransparentContainer>
           <BigTitle>Features</BigTitle>
         </TransparentContainer>
