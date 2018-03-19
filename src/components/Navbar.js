@@ -7,7 +7,7 @@ import github from '../img/github-icon.svg';
 import logo from '../img/logo.svg';
 
 const NavigationBar = styled.nav`
-  padding-top: 5px;
+  padding-top: 10px;
   padding-bottom: 5px;
   padding-left: 10px;
   padding-right: 10px;
@@ -33,12 +33,13 @@ const Container = styled.div`
 const NavLink = styled(Link)`
   color: #6a6a6a;
   line-height: 3.25rem;
-  padding: 0.5rem 1rem;
+  padding: 0 8px;
   position: relative;
 
   ${media.tablet`
     display: block;
     line-height: 1.25rem;
+    padding: 5px 8px;
   `};
 `;
 
@@ -84,7 +85,7 @@ const Navbar = () => (
       </LogoContainer>
       <LeftContainer>
         <NavLink to="/features">Features</NavLink>
-        <NavLink to="/games-showcase">Games showcase</NavLink>
+        <NavLink to="/games-showcase">Games</NavLink>
         <NavLink to="/education">Education</NavLink>
       </LeftContainer>
       <RightContainer>
