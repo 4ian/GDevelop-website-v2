@@ -6,7 +6,7 @@
   "author": "Florian Rival",
   "dependencies": {
     "bulma": "^0.6.0",
-    "gatsby": "^1.9.213",
+    "gatsby": "^1.9.237",
     "gatsby-link": "^1.6.37",
     "gatsby-plugin-google-analytics": "^1.0.22",
     "gatsby-plugin-google-fonts": "^0.0.4",

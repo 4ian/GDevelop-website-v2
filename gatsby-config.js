@@ -6,15 +6,12 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
+    'gatsby-plugin-twitter',
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `Asap:400,600`,
-          `Lobster`,
-          `Roboto`,
-        ]
-      }
+        fonts: [`Asap:400,600`, `Lobster`, `Roboto`],
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -51,4 +48,4 @@ module.exports = {
       },
     },
   ],
-}
+};

@@ -148,11 +148,6 @@ export default class EducationPage extends React.Component {
                 June 27, 2016
               </a>
             </blockquote>
-            <script
-              async
-              src="https://platform.twitter.com/widgets.js"
-              charset="utf-8"
-            />
           </TweetContainer>
           <Paragraph>
             Please send us your photos and tweets if you're using GDevelop for a
