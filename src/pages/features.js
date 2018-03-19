@@ -23,25 +23,29 @@ export default class FeaturesPage extends React.Component {
         <TransparentContainer>
           <BigTitle>Objects for your games</BigTitle>
           <List>
-            <ListItem>Sprites with multiple animations</ListItem>
+            <ListItem>
+              <b>Sprites</b> with multiple animations
+            </ListItem>
             <ListItem>"9 patch" and tiled sprites</ListItem>
             <ListItem>Text objects</ListItem>
             <ListItem>
-              Draw custom shapes on screen with the Shape Painter
+              Draw <b>custom shapes</b> on screen with the Shape Painter
             </ListItem>
             <ListItem>Support for custom collision masks</ListItem>
           </List>
           <BigTitle>Add behaviors to your game objects</BigTitle>
           <List>
             <ListItem>
-              Physics engine - <i>Add realistic behavior to your objects</i>
+              <b>Physics engine</b> -{' '}
+              <i>Add realistic behavior to your objects</i>
             </ListItem>
             <ListItem>
               Pathfinding - <i>Have your objects move and avoiding obstacles</i>
             </ListItem>
             <ListItem>Top-down movement</ListItem>
             <ListItem>
-              Platformer engine - <i>create platformer games in a breeze</i>
+              <b>Platformer</b> engine -{' '}
+              <i>create platformer games in a breeze</i>
             </ListItem>
             <ListItem>
               Draggable objects -{' '}
@@ -54,7 +58,7 @@ export default class FeaturesPage extends React.Component {
           <BigTitle>Design advanced levels and interfaces</BigTitle>
           <List>
             <ListItem>
-              The scene editor lets you visually edit your levels
+              The scene editor lets you <b>visually edit your levels</b>
             </ListItem>
             <ListItem>
               Support for multiple layers -{' '}
@@ -67,12 +71,14 @@ export default class FeaturesPage extends React.Component {
               Integrated debugger and performance profilers -{' '}
               <i>coming soon!</i>
             </ListItem>
-            <ListItem>
-              <BigTitle>Make desktop &amp; mobile-ready games</BigTitle>
-              Save player data in browser/local storage
-            </ListItem>
+          </List>
+          <BigTitle>Make desktop &amp; mobile-ready games</BigTitle>
+          <List>
+            <ListItem>Save player data in browser/local storage</ListItem>
             <ListItem>Full support for sound effects and music</ListItem>
-            <ListItem>Support for touchscreens & multi-touch</ListItem>
+            <ListItem>
+              Support for <b>touchscreens</b> & multi-touch
+            </ListItem>
           </List>
           <BigTitle>Build ambitious games with advanced features</BigTitle>
           <List>
@@ -80,16 +86,18 @@ export default class FeaturesPage extends React.Component {
               Communicate with external websites using HTTP requests
             </ListItem>
             <ListItem>
-              Use advanced events: loops, for-each and even functions
+              Use advanced events: <b>loops</b>, for-each and even functions
             </ListItem>
             <ListItem>
               Manipulate variables with arbitrary complex structures and even
               JSON support
             </ListItem>
-            <ListItem>Use Javascript to code any part of your game</ListItem>
+            <ListItem>
+              Use <b>Javascript</b> to code any part of your game
+            </ListItem>
           </List>
         </TransparentContainer>
-        <Spacer height="50px"/>
+        <Spacer height="50px" />
         <MakeGameBanner />
       </div>
     );
