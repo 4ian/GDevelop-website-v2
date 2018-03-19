@@ -5,9 +5,12 @@ import TransparentContainer from '../components/Containers/TransparentContainer'
 import WhiteBigTitle from '../components/WhiteBigTitle';
 import WhiteParagraph from '../components/WhiteParagraph';
 
-import Spacer from '../components/Grid/Spacer';
+import chromeWithGame from '../img/chrome-with-game.png';
 import { List, ListItem } from '../components/List';
 import MakeGameBanner from '../components/MakeGameBanner';
+import BottomCenteredBigImage from '../components/BottomCenteredBigImage';
+import BigGhostButton from '../components/BigGhostButton';
+import CenteredRow from '../components/Grid/CenteredRow';
 
 export default class FeaturesPage extends React.Component {
   render() {
@@ -33,6 +36,11 @@ export default class FeaturesPage extends React.Component {
             </ListItem>
             <ListItem>Support for custom collision masks</ListItem>
           </List>
+          <CenteredRow>
+            <BigGhostButton to="http://wiki.compilgames.net/doku.php/gdevelop5/objects">
+              Read the documentation for all objects
+            </BigGhostButton>
+          </CenteredRow>
           <BigTitle>Add behaviors to your game objects</BigTitle>
           <List>
             <ListItem>
@@ -55,6 +63,11 @@ export default class FeaturesPage extends React.Component {
               And more, to automate current tasks and behaviors in a few clicks!
             </ListItem>
           </List>
+          <CenteredRow>
+            <BigGhostButton to="http://wiki.compilgames.net/doku.php/gdevelop5/behaviors">
+              Read the documentation for all behaviors
+            </BigGhostButton>
+          </CenteredRow>
           <BigTitle>Design advanced levels and interfaces</BigTitle>
           <List>
             <ListItem>
@@ -72,6 +85,11 @@ export default class FeaturesPage extends React.Component {
               <i>coming soon!</i>
             </ListItem>
           </List>
+          <CenteredRow>
+            <BigGhostButton to="http://wiki.compilgames.net/doku.php/gdevelop5/interface">
+              Read the documentation for editors
+            </BigGhostButton>
+          </CenteredRow>
           <BigTitle>Make desktop &amp; mobile-ready games</BigTitle>
           <List>
             <ListItem>Save player data in browser/local storage</ListItem>
@@ -96,8 +114,34 @@ export default class FeaturesPage extends React.Component {
               Use <b>Javascript</b> to code any part of your game
             </ListItem>
           </List>
+          <CenteredRow>
+            <BigGhostButton to="http://wiki.compilgames.net/doku.php/gdevelop5/events">
+              Read the documentation about events
+            </BigGhostButton>
+          </CenteredRow>
+          <BigTitle>Deploy your game everywhere</BigTitle>
+          <List>
+            <ListItem>
+              One click export for <b>Android</b>
+            </ListItem>
+            <ListItem>Export your game for <b>the web</b> in one click</ListItem>
+            <ListItem>
+              Export your game to <b>iOS</b> (with PhoneGap Build or Cordova)
+            </ListItem>
+            <ListItem>
+              Publish your game on Kongregate, Itch.io and other gaming website!
+            </ListItem>
+            <ListItem>
+              Export as a stand-alone executable game for Windows, macOS and Linux - <i>Coming Soon!</i>
+            </ListItem>
+          </List>
+          <CenteredRow>
+            <BigGhostButton to="http://wiki.compilgames.net/doku.php/gdevelop5/publishing">
+              Learn how to publish your game
+            </BigGhostButton>
+          </CenteredRow>
         </TransparentContainer>
-        <Spacer height="50px" />
+        <BottomCenteredBigImage src={chromeWithGame} />
         <MakeGameBanner />
       </div>
     );
