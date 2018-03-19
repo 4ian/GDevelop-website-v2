@@ -214,17 +214,17 @@ export default class EducationPage extends React.Component {
         </BannerContainer>
         <Spacer height="50px" />
         <TransparentContainer>
-          {groupByNUple(games, 2).map(groupedGames => (
-            <Row>
-              {groupedGames.map(game => (
-                <Column>
+          {groupByNUple(games, 2).map((groupedGames, index) => (
+            <Row key={index}>
+              {groupedGames.map((game, index) => (
+                <Column key={`${game.title}-${game.author}`}>
                   <GameThumbnail src={game.imageSrc} />
                   <GameThumbnailTitle textAlign="center">
                     <b>{game.title}</b> by {game.author}
                   </GameThumbnailTitle>
                   {!!game.link && (
                     <CenteredRow>
-                      <BigButton href={game.link}>{game.linkTitle}</BigButton>
+                      <BigButton to={game.link}>{game.linkTitle}</BigButton>
                     </CenteredRow>
                   )}
                 </Column>
