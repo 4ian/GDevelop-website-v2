@@ -4,11 +4,10 @@ import BannerContainer from '../components/Containers/BannerContainer';
 import TransparentContainer from '../components/Containers/TransparentContainer';
 import WhiteBigTitle from '../components/WhiteBigTitle';
 import WhiteParagraph from '../components/WhiteParagraph';
-import WhiteBigButton from '../components/WhiteBigButton';
 
-import CenteredRow from '../components/Grid/CenteredRow';
 import Spacer from '../components/Grid/Spacer';
 import { List, ListItem } from '../components/List';
+import MakeGameBanner from '../components/MakeGameBanner';
 
 export default class FeaturesPage extends React.Component {
   render() {
@@ -91,17 +90,7 @@ export default class FeaturesPage extends React.Component {
           </List>
         </TransparentContainer>
         <Spacer height="50px"/>
-        <BannerContainer>
-          <WhiteBigTitle>Make your first game</WhiteBigTitle>
-          <WhiteParagraph>
-            Imagine and publish your games with GDevelop. Bundled with tutorials
-            and examples.
-          </WhiteParagraph>
-          <CenteredRow>
-            <WhiteBigButton>Try it online</WhiteBigButton>
-            <WhiteBigButton>Download</WhiteBigButton>
-          </CenteredRow>
-        </BannerContainer>
+        <MakeGameBanner />
       </div>
     );
   }

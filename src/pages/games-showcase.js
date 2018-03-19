@@ -4,7 +4,7 @@ import BannerContainer from '../components/Containers/BannerContainer';
 import TransparentContainer from '../components/Containers/TransparentContainer';
 import WhiteBigTitle from '../components/WhiteBigTitle';
 import WhiteParagraph from '../components/WhiteParagraph';
-import WhiteBigButton from '../components/WhiteBigButton';
+import MakeGameBanner from '../components/MakeGameBanner';
 
 import Row from '../components/Grid/Row';
 import CenteredRow from '../components/Grid/CenteredRow';
@@ -98,7 +98,9 @@ const games = [
   {
     imageSrc: require('../img/games/big_mathepferd.jpg'),
     title: 'Mathe Pferd',
-    author: 'ttp://trancefer.wmw.cc/index.php/mathepferd',
+    author: 'Trancefer Lane',
+    link: 'http://trancefer.wmw.cc/index.php/mathepferd',
+    linkTitle: 'Download',
   },
   {
     imageSrc: require('../img/games/big_minotaure.jpg'),
@@ -218,8 +220,7 @@ export default class EducationPage extends React.Component {
                 <Column>
                   <GameThumbnail src={game.imageSrc} />
                   <GameThumbnailTitle textAlign="center">
-                    <b>{game.title}</b>{' '}
-                    by {game.author}
+                    <b>{game.title}</b> by {game.author}
                   </GameThumbnailTitle>
                   {!!game.link && (
                     <CenteredRow>
@@ -231,14 +232,7 @@ export default class EducationPage extends React.Component {
             </Row>
           ))}
         </TransparentContainer>
-        <BannerContainer>
-          <WhiteBigTitle>Make your own game</WhiteBigTitle>
-          <WhiteParagraph>
-            With GDevelop, you too can create impressive games from scratch!
-          </WhiteParagraph>
-          <WhiteBigButton>Try it online</WhiteBigButton>
-          <WhiteBigButton>Download</WhiteBigButton>
-        </BannerContainer>
+        <MakeGameBanner />
       </div>
     );
   }

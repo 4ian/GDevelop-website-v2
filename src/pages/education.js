@@ -5,6 +5,7 @@ import BannerContainer from '../components/Containers/BannerContainer';
 import TransparentContainer from '../components/Containers/TransparentContainer';
 import WhiteBigTitle from '../components/WhiteBigTitle';
 import WhiteParagraph from '../components/WhiteParagraph';
+import MakeGameBanner from '../components/MakeGameBanner';
 
 const TweetContainer = styled.div`
   display: flex;
@@ -154,6 +155,7 @@ export default class EducationPage extends React.Component {
             course!
           </Paragraph>
         </TransparentContainer>
+        <MakeGameBanner />
       </div>
     );
   }

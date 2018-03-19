@@ -5,10 +5,12 @@ import BannerContainer from '../components/Containers/BannerContainer';
 import TransparentContainer from '../components/Containers/TransparentContainer';
 import WhiteBigTitle from '../components/WhiteBigTitle';
 import WhiteParagraph from '../components/WhiteParagraph';
+import config from '../config';
 
 import CenteredRow from '../components/Grid/CenteredRow';
 import Spacer from '../components/Grid/Spacer';
 import BigGhostButton from '../components/BigGhostButton';
+import BigTitle from '../components/BigTitle';
 
 export default class DownloadPage extends React.Component {
   render() {
@@ -29,27 +31,37 @@ export default class DownloadPage extends React.Component {
             web browser.
           </Paragraph>
           <CenteredRow>
-            <BigButton href="TODO">Windows</BigButton>
-            <BigButton href="TODO">macOS</BigButton>
-            <BigButton href="TODO">Linux</BigButton>
-            <BigGhostButton href="TODO">Try it online</BigGhostButton>
+            <BigButton to={config.gdevelopWindowsUrl}>Windows</BigButton>
+            <BigButton to={config.gdevelopMacOSUrl}>macOS</BigButton>
+            <BigButton to={config.gdevelopLinuxUrl}>Linux</BigButton>
+            <BigGhostButton to={config.onlineEditorUrl} target="_blank">
+              Try it online
+            </BigGhostButton>
           </CenteredRow>
           <Paragraph>
             To create your first game, start by reading a tutorial:
           </Paragraph>
           <CenteredRow>
             <BigGhostButton
-              href="http://wiki.compilgames.net/doku.php/gdevelop5/tutorials/platform-game/start"
+              to="http://wiki.compilgames.net/doku.php/gdevelop5/tutorials/platform-game/start"
               target="_blank"
             >
               Create a platformer game
             </BigGhostButton>
             <BigGhostButton
-              href="http://wiki.compilgames.net/doku.php/gdevelop5/tutorials/tank-shooter"
+              to="http://wiki.compilgames.net/doku.php/gdevelop5/tutorials/tank-shooter"
               target="_blank"
             >
               Create a tank shooter game
             </BigGhostButton>
+          </CenteredRow>
+          <BigTitle>Contribute to GDevelop</BigTitle>
+          <Paragraph>
+            Gdevelop is an open-source project. You can get involved in the
+            community to improve it!
+          </Paragraph>
+          <CenteredRow>
+            <BigButton to={'/contribute/'}>Learn how to contribute</BigButton>
           </CenteredRow>
         </TransparentContainer>
         <Spacer height="50px" />

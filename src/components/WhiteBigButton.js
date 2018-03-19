@@ -1,7 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
+import Link from './Link';
 
-const WhiteBigButton = styled.a`
+const WhiteBigButton = styled(Link)`
   min-height: 56px;
   min-width: 200px;
   padding: 15px;

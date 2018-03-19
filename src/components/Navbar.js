@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Link from 'gatsby-link';
+import Link from './Link';
 import { media } from '../lib/media';
 
 import github from '../img/github-icon.svg';
@@ -30,7 +30,7 @@ const Container = styled.div`
   `};
 `;
 
-const NavLink = styled.a`
+const NavLink = styled(Link)`
   color: #6a6a6a;
   line-height: 3.25rem;
   padding: 0.5rem 1rem;
@@ -67,12 +67,11 @@ const LogoContainer = styled.div`
   `};
 `;
 
-const Icon = styled.span`
-  align-items: center;
-  display: inline-flex;
-  justify-content: center;
-  height: 1.5rem;
-  width: 1.5rem;
+const Icon = styled.img`
+  position: relative;
+  height: 25px;
+  width: 25px;
+  top: 5px;
 `;
 
 const Navbar = () => (
@@ -84,29 +83,17 @@ const Navbar = () => (
         </Link>
       </LogoContainer>
       <LeftContainer>
-        <Link to="/features">
-          <NavLink>Features</NavLink>
-        </Link>
-        <Link to="/games-showcase">
-          <NavLink>Games showcase</NavLink>
-        </Link>
-        <Link to="/education">
-          <NavLink>Education</NavLink>
-        </Link>
+        <NavLink to="/features">Features</NavLink>
+        <NavLink to="/games-showcase">Games showcase</NavLink>
+        <NavLink to="/education">Education</NavLink>
       </LeftContainer>
       <RightContainer>
-        <NavLink href="http://wiki.compilgames.net/doku.php/gdevelop5/start">
+        <NavLink to="http://wiki.compilgames.net/doku.php/gdevelop5/start">
           Tutorials
         </NavLink>
-        <NavLink href="http://forum.compilgames.net">Community</NavLink>
-        <NavLink
-          href="https://github.com/4ian/GD"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Icon>
-            <img src={github} alt="Github" />
-          </Icon>
+        <NavLink to="http://forum.compilgames.net">Community</NavLink>
+        <NavLink to="https://github.com/4ian/GD">
+          <Icon src={github} alt="Github" />
         </NavLink>
       </RightContainer>
     </Container>

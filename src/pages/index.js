@@ -23,6 +23,8 @@ import CenteredRow from '../components/Grid/CenteredRow';
 import Spacer from '../components/Grid/Spacer';
 import CenteredColumn from '../components/Grid/CenteredColumn';
 import Carousel from '../components/Carousel';
+import MakeGameBanner from '../components/MakeGameBanner';
+import config from '../config';
 
 export default class IndexPage extends React.Component {
   render() {
@@ -40,8 +42,10 @@ export default class IndexPage extends React.Component {
                 to be used by everyone - no programming skills required.
               </WhiteParagraph>
               <CenteredRow>
-                <WhiteBigButton>Try it online</WhiteBigButton>
-                <WhiteBigButton>Download</WhiteBigButton>
+                <WhiteBigButton to={config.onlineEditorUrl}>
+                  Try it online
+                </WhiteBigButton>
+                <WhiteBigButton to="/download/">Download</WhiteBigButton>
               </CenteredRow>
             </CenteredColumn>
           </Row>
@@ -111,17 +115,11 @@ export default class IndexPage extends React.Component {
           />
         </TransparentContainer>
         <Spacer height="50px" />
-        <BannerContainer>
-          <WhiteBigTitle>Make your first game</WhiteBigTitle>
-          <WhiteParagraph>
-            Imagine and publish your games with GDevelop. Bundled with tutorials
-            and examples.
-          </WhiteParagraph>
-          <CenteredRow>
-            <WhiteBigButton>Try it online</WhiteBigButton>
-            <WhiteBigButton>Download</WhiteBigButton>
-          </CenteredRow>
-        </BannerContainer>
+        <MakeGameBanner
+          title="Make your first game"
+          text="Imagine and publish your games with GDevelop. Bundled with tutorials
+            and examples."
+        />
       </div>
     );
   }

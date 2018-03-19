@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Link from 'gatsby-link';
+import Link from './Link';
 import { media } from '../lib/media';
 import Row from './Grid/Row';
 import Column from './Grid/Column';
@@ -17,9 +17,9 @@ const FooterContainer = styled.div`
 
 const ContentContainer = styled.div`
   margin: auto;
-  width: 620px;
+  width: 720px;
   padding: 10px;
-  background-color: rgba(247, 247, 247, 0.8);
+  background-color: rgba(247, 247, 247, 0.88);
 
   ${media.tablet`
     width: auto;
@@ -34,7 +34,7 @@ const FooterText = styled.p`
   margin-top: 10px;
 `;
 
-const FooterLink = styled.a`
+const FooterLink = styled(Link)`
   font-size: 20px;
   color: #4ab0e4;
   font-weight: 600;
@@ -62,32 +62,22 @@ export default () => (
       </FooterText>
       <Row>
         <Column>
-          <Link to="/download/">
-            <FooterLink>Download the editor</FooterLink>
-          </Link>
-          <FooterLink href="https://editor.gdevelop-app.com">
+          <FooterLink to="/download/">Download the editor</FooterLink>
+          <FooterLink to="https://editor.gdevelop-app.com">
             Online game editor
           </FooterLink>
-          <FooterLink href="http://forum.compilgames.net">
+          <FooterLink to="http://forum.compilgames.net">
             Community forums
           </FooterLink>
-          <FooterLink href="http://wiki.compilgames.net/doku.php/gdevelop5/start">
+          <FooterLink to="http://wiki.compilgames.net/doku.php/gdevelop5/start">
             Documentation &amp; tutorials
           </FooterLink>
         </Column>
         <Column>
-          <Link to="/features/">
-            <FooterLink>Features</FooterLink>
-          </Link>
-          <Link to="/education/">
-            <FooterLink>Education</FooterLink>
-          </Link>
-          <Link to="/games-showcase/">
-            <FooterLink>Games showcase</FooterLink>
-          </Link>
-          <Link to="/contribute/">
-            <FooterLink>Contribute</FooterLink>
-          </Link>
+          <FooterLink to="/features/">Features</FooterLink>
+          <FooterLink to="/education/">Education</FooterLink>
+          <FooterLink to="/games-showcase/">Games showcase</FooterLink>
+          <FooterLink to="/contribute/">Contribute</FooterLink>
         </Column>
       </Row>
       <CopyrightText>
