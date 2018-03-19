@@ -4,15 +4,22 @@ import Link from 'gatsby-link';
 import { media } from '../lib/media';
 import Row from './Grid/Row';
 import Column from './Grid/Column';
+import footerImage from '../img/background-platformer-level.png';
 
 const FooterContainer = styled.div`
   background-color: #f7f7f7;
+  background-image: url(${footerImage});
+  background-size: contain;
+  background-position: bottom;
+  background-repeat: repeat-x;
   padding: 30px;
 `;
 
 const ContentContainer = styled.div`
   margin: auto;
-  width: 600px;
+  width: 620px;
+  padding: 10px;
+  background-color: rgba(247, 247, 247, 0.8);
 
   ${media.tablet`
     width: auto;
