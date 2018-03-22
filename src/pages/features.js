@@ -124,7 +124,9 @@ export default class FeaturesPage extends React.Component {
             <ListItem>
               One click export for <b>Android</b>
             </ListItem>
-            <ListItem>Export your game for <b>the web</b> in one click</ListItem>
+            <ListItem>
+              Export your game for <b>the web</b> in one click
+            </ListItem>
             <ListItem>
               Export your game to <b>iOS</b> (with PhoneGap Build or Cordova)
             </ListItem>
@@ -132,7 +134,8 @@ export default class FeaturesPage extends React.Component {
               Publish your game on Kongregate, Itch.io and other gaming website!
             </ListItem>
             <ListItem>
-              Export as a stand-alone executable game for Windows, macOS and Linux - <i>Coming Soon!</i>
+              Export as a stand-alone executable game for Windows, macOS and
+              Linux - <i>Coming Soon!</i>
             </ListItem>
           </List>
           <CenteredRow>

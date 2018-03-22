@@ -1,56 +1,62 @@
-const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
+const path = require('path');
+const { createFilePath } = require('gatsby-source-filesystem');
 
-// exports.createPages = ({ boundActionCreators, graphql }) => {
-//   const { createPage } = boundActionCreators
+const locales = {
+  en: { path: '', messages: {} },
+  fr: {
+    path: 'fr',
+    messages: { 'Create your own games': 'Créez vos propres jeux' },
+  },
+  es: { path: 'es', messages: { test: 'es' } },
+};
 
-//   return graphql(`
-//     {
-//       allMarkdownRemark(limit: 1000) {
-//         edges {
-//           node {
-//             id
-//             fields {
-//               slug
-//             }
-//             frontmatter {
-//               templateKey
-//             }
-//           }
-//         }
-//       }
-//     }
-//   `).then(result => {
-//     if (result.errors) {
-//       result.errors.forEach(e => console.error(e.toString()))
-//       return Promise.reject(result.errors)
-//     }
+exports.onCreatePage = ({ page, boundActionCreators }) => {
+  const { createPage, deletePage } = boundActionCreators;
 
-//     result.data.allMarkdownRemark.edges.forEach(edge => {
-//       const id = edge.node.id
-//       createPage({
-//         path: edge.node.fields.slug,
-//         component: path.resolve(
-//           `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
-//         ),
-//         // additional data can be passed via context
-//         context: {
-//           id,
-//         },
-//       })
-//     })
-//   })
-// }
+  if (page.path.includes('404')) {
+    return; // no need for localized 404 pages
+  }
+
+  return new Promise(resolve => {
+    const pages = makeLocalizedPages(page);
+    deletePage(page);
+    pages.map(page => createPage(page));
+
+    resolve();
+  });
+};
+
+const makeLocalizedPages = page => {
+  const pages = [];
+  Object.keys(locales).map(lang => {
+    const path = locales[lang]['path'] + page.path;
+
+    pages.push({
+      ...page,
+      path,
+      context: {
+        localeCode: lang,
+        localeMessages: {
+          [lang]: {
+            translation: locales[lang].messages,
+          },
+        },
+      },
+    });
+  });
+
+  return pages;
+};
 
 exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField } = boundActionCreators
+  const { createNodeField } = boundActionCreators;
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    const value = createFilePath({ node, getNode });
     createNodeField({
       name: `slug`,
       node,
       value,
-    })
+    });
   }
-}
+};
