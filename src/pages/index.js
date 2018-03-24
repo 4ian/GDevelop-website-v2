@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import PageContainer from '../lib/PageContainer';
 
 import BigTitle from '../components/BigTitle';
 import Paragraph from '../components/Paragraph';
@@ -28,7 +29,6 @@ import CenteredColumn from '../components/Grid/CenteredColumn';
 import Carousel from '../components/Carousel';
 import MakeGameBanner from '../components/MakeGameBanner';
 import config from '../config';
-import PageContainer from '../lib/PageContainer';
 
 export default class IndexPage extends React.Component {
   render() {

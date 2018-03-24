@@ -1,52 +1,41 @@
-# Gatsby + Netlify CMS Starter
+# GDevelop website
 
-This repo contains an example business website that is built with [Gatsby](https://www.gatsbyjs.org/), and [Netlify CMS](https://www.netlifycms.org): **[Demo Link](https://gatsby-netlify-cms.netlify.com/)**.
+This is the repository for the new website for **[GDevelop](https://gdevelop-app.com)**, the open source game creator requiring no programming skills.
 
-It follows the [JAMstack architecture](https://jamstack.org) by using Git as a single source of truth, and [Netlify](https://www.netlify.com) for continuous deployment, and CDN distribution.
+Any contribution, design or wording enhancements is welcome! Open issues if you having anything to say or, even better, submit a pull request. You can also discuss with the community on **[GDevelop forums](http://forum.compilgames.net)**.
 
-## Prerequisites
+If you want to **translate the website to your language**, just go on [the Crowdin translation project](https://crowdin.com/project/gdevelop-website)!
 
-- Node (I recommend using v8.2.0 or higher)
-- [Gatsby CLI](https://www.gatsbyjs.org/docs/)
+## Development
 
-## Getting Started (Recommended)
+Ensure you have [Node.js](https://nodejs.org) installed. The website is based on [Gatsby.js](https://www.gatsbyjs.org/).
 
-Netlify CMS can run in any frontend web environment, but the quickest way to try it out is by running it on a pre-configured starter site with Netlify. The example here is the Kaldi coffee company template (adapted from [One Click Hugo CMS](https://github.com/netlify-templates/one-click-hugo-cms)). Use the button below to build and deploy your own copy of the repository:
+Translations are stored into *i18n* directory, in plain JSON files.
 
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/AustinGreen/gatsby-starter-netlify-cms&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
+### Installation
 
-After clicking that button, you’ll authenticate with GitHub and choose a repository name. Netlify will then automatically create a repository in your GitHub account with a copy of the files from the template. Next, it will build and deploy the new site on Netlify, bringing you to the site dashboard when the build is complete. Next, you’ll need to set up Netlify’s Identity service to authorize users to log in to the CMS.
+Clone the repository and install dependencies:
 
-### Access Locally
-```
-$ git clone https://github.com/[GITHUB_USERNAME]/[REPO_NAME].git
-$ cd [REPO_NAME]
-$ yarn
-$ npm run develop
-```
-To test the CMS locally, you'll need run a production build of the site:
-```
-$ npm run build
-$ npm run serve
-```
+    npm install # or yarn install
 
-## Getting Started (Without Netlify)
-```
-$ gatsby new [SITE_DIRECTORY_NAME] https://github.com/AustinGreen/gatsby-starter-netlify-cms/
-$ cd [SITE_DIRECTORY_NAME]
-$ npm run build
-$ npm run serve
-```
+### Workflow
 
-### Setting up the CMS
-Follow the [Netlify CMS Quick Start Guide](https://www.netlifycms.org/docs/quick-start/#authentication) to set up authentication, and hosting.
+For development with changes watch and hot reloading, run:
 
-## Debugging
-Windows users might encounter ```node-gyp``` errors when trying to npm install.
-To resolve, make sure that you have both Python 2.7 and the Visual C++ build environment installed.
-```
-npm config set python python2.7
-npm install --global --production windows-build-tools
-```
+    npm run develop
 
-[Full details here](https://www.npmjs.com/package/node-gyp 'NPM node-gyp page')
+### Updating translations
+
+ * Update *i18n/catalog.json* by running `npm run extract-translations`.
+ * The *catalog.json* should then be uploaded to the [the Crowdin translation project](https://crowdin.com/project/gdevelop-website) by the project administrator.
+ * To update the translations, build the project on the Crowdin page, download the archive and replace *.json* files in *locale* directory by the ones contained in the archive.
+
+### Deployment
+
+Deployment is done by Netlify (running `gulp` and deploying `public` folder) after any commit on `master`.
+
+## License
+
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+
+GDevelop is under the MIT license: check out the [GDevelop repository](https://github.com/4ian/GD) for more information on how to contribute to the software.
