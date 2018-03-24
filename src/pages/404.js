@@ -1,10 +1,32 @@
-import React from 'react'
+import React from 'react';
+import Helmet from 'react-helmet';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import PageContainer from '../lib/PageContainer';
+import BigTitle from '../components/BigTitle';
+import Paragraph from '../components/GameThumbnailTitle';
+import TransparentContainer from '../components/Containers/TransparentContainer';
+import Spacer from '../components/Grid/Spacer';
 
-const NotFoundPage = () => (
-  <div>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </div>
-)
+const NotFoundPage = props => (
+  <PageContainer {...props.pathContext}>
+    {t => (
+      <React.Fragment>
+        <Helmet title="GDevelop - Page not found" />
+        <Navbar t={t} />
+        <Spacer height="200px" />
+        <TransparentContainer>
+          <BigTitle>Oops, looks like this page does not exist</BigTitle>
+          <Paragraph>
+            If you believe this is a mistake, please send us a message :)
+          </Paragraph>
+          <Paragraph>Use the menu to navigate on GDevelop website.</Paragraph>
+        </TransparentContainer>
+        <Spacer height="200px" />
+        <Footer t={t} />
+      </React.Fragment>
+    )}
+  </PageContainer>
+);
 
-export default NotFoundPage
+export default NotFoundPage;

@@ -1,4 +1,9 @@
 import React from 'react';
+import Helmet from 'react-helmet';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import PageContainer from '../lib/PageContainer';
+
 import BigButton from '../components/BigButton';
 import BannerContainer from '../components/Containers/BannerContainer';
 import TransparentContainer from '../components/Containers/TransparentContainer';
@@ -204,36 +209,43 @@ const groupByNUple = (array, n) => {
 export default class EducationPage extends React.Component {
   render() {
     return (
-      <div>
-        <BannerContainer>
-          <WhiteBigTitle>Games showcase</WhiteBigTitle>
-          <WhiteParagraph>
-            Here are a few games created with GDevelop. The next one should be
-            yours!
-          </WhiteParagraph>
-        </BannerContainer>
-        <Spacer height="50px" />
-        <TransparentContainer>
-          {groupByNUple(games, 2).map((groupedGames, index) => (
-            <Row key={index}>
-              {groupedGames.map((game, index) => (
-                <Column key={`${game.title}-${game.author}`}>
-                  <GameThumbnail src={game.imageSrc} />
-                  <GameThumbnailTitle textAlign="center">
-                    <b>{game.title}</b> by {game.author}
-                  </GameThumbnailTitle>
-                  {!!game.link && (
-                    <CenteredRow>
-                      <BigButton to={game.link}>{game.linkTitle}</BigButton>
-                    </CenteredRow>
-                  )}
-                </Column>
+      <PageContainer {...this.props.pathContext}>
+        {t => (
+          <React.Fragment>
+            <Helmet title="GDevelop - Create games without programming - Open source HTML5 and native game creator" />
+            <Navbar t={t} />
+            <BannerContainer>
+              <WhiteBigTitle>Games showcase</WhiteBigTitle>
+              <WhiteParagraph>
+                Here are a few games created with GDevelop. The next one should
+                be yours!
+              </WhiteParagraph>
+            </BannerContainer>
+            <Spacer height="50px" />
+            <TransparentContainer>
+              {groupByNUple(games, 2).map((groupedGames, index) => (
+                <Row key={index}>
+                  {groupedGames.map((game, index) => (
+                    <Column key={`${game.title}-${game.author}`}>
+                      <GameThumbnail src={game.imageSrc} />
+                      <GameThumbnailTitle textAlign="center">
+                        <b>{game.title}</b> by {game.author}
+                      </GameThumbnailTitle>
+                      {!!game.link && (
+                        <CenteredRow>
+                          <BigButton to={game.link}>{game.linkTitle}</BigButton>
+                        </CenteredRow>
+                      )}
+                    </Column>
+                  ))}
+                </Row>
               ))}
-            </Row>
-          ))}
-        </TransparentContainer>
-        <MakeGameBanner />
-      </div>
+            </TransparentContainer>
+            <MakeGameBanner />
+            <Footer t={t} />
+          </React.Fragment>
+        )}
+      </PageContainer>
     );
   }
 }

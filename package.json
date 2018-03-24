@@ -36,11 +36,14 @@
     "develop": "gatsby develop",
     "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
+    "extract-translations": "i18next-scanner --config i18next-scanner.config.js 'src/**/*.{js,jsx}'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "chalk": "^2.3.2",
     "eslint": "^4.19.0",
     "eslint-config-universe": "^1.0.7",
+    "i18next-scanner": "^2.4.6",
     "prettier": "^1.7.4"
   }
 }

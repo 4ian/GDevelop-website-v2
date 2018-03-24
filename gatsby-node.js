@@ -1,14 +1,20 @@
-const path = require('path');
+const chalk = require('chalk');
 const { createFilePath } = require('gatsby-source-filesystem');
+const { getAllLocales, getLocaleMessages } = require('./i18n-helpers');
 
 const locales = {
   en: { path: '', messages: {} },
-  fr: {
-    path: 'fr',
-    messages: { 'Create your own games': 'Créez vos propres jeux' },
-  },
-  es: { path: 'es', messages: { test: 'es' } },
 };
+getAllLocales().forEach(langCode => {
+  let messages = getLocaleMessages(langCode);
+  if (!messages) {
+    console.log(chalk.red(`Unable to get messages for langCode=${langCode}`));
+    messages = {};
+  }
+
+  locales[langCode] = { path: langCode, messages };
+});
+console.log(`${chalk.blue(Object.keys(locales).length)} locales loaded`);
 
 exports.onCreatePage = ({ page, boundActionCreators }) => {
   const { createPage, deletePage } = boundActionCreators;

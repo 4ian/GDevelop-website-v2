@@ -1,4 +1,8 @@
 import React from 'react';
+import Helmet from 'react-helmet';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+
 import BigTitle from '../components/BigTitle';
 import Paragraph from '../components/Paragraph';
 import TransparentContainer from '../components/Containers/TransparentContainer';
@@ -24,16 +28,16 @@ import CenteredColumn from '../components/Grid/CenteredColumn';
 import Carousel from '../components/Carousel';
 import MakeGameBanner from '../components/MakeGameBanner';
 import config from '../config';
-import TranslatableView from '../lib/TranslatableView';
+import PageContainer from '../lib/PageContainer';
 
 export default class IndexPage extends React.Component {
   render() {
-    const { localeCode, localeMessages } = this.props.pathContext;
-
     return (
-      <TranslatableView localeCode={localeCode} localeMessages={localeMessages}>
+      <PageContainer {...this.props.pathContext}>
         {t => (
-          <div>
+          <React.Fragment>
+            <Helmet title="GDevelop - Create games without programming - Open source HTML5 and native game creator" />
+            <Navbar t={t} />
             <LandingContainer>
               <WhiteBigTitle>{t('Create your own games')}</WhiteBigTitle>
               <Row reverse>
@@ -42,25 +46,27 @@ export default class IndexPage extends React.Component {
                 </CenteredColumn>
                 <CenteredColumn flex={5}>
                   <WhiteParagraph textAlign="center">
-                    GDevelop is an open-source, cross-platform game creator
-                    designed to be used by everyone - no programming skills
-                    required.
+                    {t(
+                      'GDevelop is an open-source, cross-platform game creator designed to be used by everyone - no programming skills required.'
+                    )}
                   </WhiteParagraph>
                   <CenteredRow>
                     <WhiteBigButton to={config.onlineEditorUrl}>
-                      Try it online
+                      {t('Try it online')}
                     </WhiteBigButton>
-                    <WhiteBigButton to="/download/">Download</WhiteBigButton>
+                    <WhiteBigButton to="/download/">
+                      {t('Download')}
+                    </WhiteBigButton>
                   </CenteredRow>
                 </CenteredColumn>
               </Row>
             </LandingContainer>
             <TransparentContainer>
-              <BigTitle>Create any game</BigTitle>
+              <BigTitle>{t('Create any game')}</BigTitle>
               <Paragraph>
-                Unleash your creativity with GDevelop and create any kind of
-                game: platformers, puzzles, shoot 'em up, strategy... Go through
-                the examples or start a new project from scratch.
+                {t(
+                  "Unleash your creativity with GDevelop and create any kind of game: platformers, puzzles, shoot 'em up, strategy... Go through the examples or start a new project from scratch."
+                )}
               </Paragraph>
             </TransparentContainer>
             <TransparentContainer noPadding>
@@ -79,56 +85,58 @@ export default class IndexPage extends React.Component {
               >
                 <img
                   src={platformerSceneEditor}
-                  alt="Create platformer games with GDevelop"
+                  alt={t('Create platformer games with GDevelop')}
                 />
                 <img
                   src={spaceShooterSceneEditor}
-                  alt="Create space shooter games with GDevelop"
+                  alt={t('Create space shooter games with GDevelop')}
                 />
                 <img
                   src={pathfindingTankSceneEditor}
-                  alt="Create strategy games with GDevelop"
+                  alt={t('Create strategy games with GDevelop')}
                 />
                 <img
                   src={platformer2SceneEditor}
-                  alt="Create games with GDevelop"
+                  alt={t('Create games with GDevelop')}
                 />
               </Carousel>
             </TransparentContainer>
             <TransparentContainer>
-              <BigTitle>Events - game creation for everyone</BigTitle>
+              <BigTitle>{t('Events - game creation for everyone')}</BigTitle>
               <Paragraph>
-                What makes GDevelop unique and so easy to use are the events.
-                Events are a powerful way to express the logic of your game,
-                without having to learn a programming language.
+                {t(
+                  'What makes GDevelop unique and so easy to use are the events. Events are a powerful way to express the logic of your game, without having to learn a programming language.'
+                )}
               </Paragraph>
               <CenteredBigImage maxWidth="800px" src={events} />
               <ExplanationText>
-                When Space is pressed, the character animation and a sound are
-                played. If a bomb touches the character, they are both
-                destroyed.
+                {t(
+                  'When Space is pressed, the character animation and a sound are played. If a bomb touches the character, they are both destroyed.'
+                )}
               </ExplanationText>
-              <BigTitle>Export your game in one click</BigTitle>
+              <BigTitle>{t('Export your game in one click')}</BigTitle>
               <Paragraph>
-                Publish your games to the web, iOS, Android, Windows, Mac,
-                Linux. Games created with GDevelop run anywhere and you can even
-                do a one-click export to Android from the app.
+                {t(
+                  'Publish your games to the web, iOS, Android, Windows, Mac, Linux. Games created with GDevelop run anywhere and you can even do a one-click export to Android from the app.'
+                )}
               </Paragraph>
               <CenteredBigImage
                 maxWidth="800px"
                 src={gamesOnMobileTabletDesktopWeb}
-                alt="Make games for iOS, Android, Windows, macOS and Linux"
+                alt={t('Make games for iOS, Android, Windows, macOS and Linux')}
               />
             </TransparentContainer>
             <Spacer height="50px" />
             <MakeGameBanner
-              title="Make your first game"
-              text="Imagine and publish your games with GDevelop. Bundled with tutorials
-            and examples."
+              title={t('Make your first game')}
+              text={t(
+                'Imagine and publish your games with GDevelop. Bundled with tutorials and examples.'
+              )}
             />
-          </div>
+            <Footer t={t} />
+          </React.Fragment>
         )}
-      </TranslatableView>
+      </PageContainer>
     );
   }
 }

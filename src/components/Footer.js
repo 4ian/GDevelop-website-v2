@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Trans } from 'react-i18next';
 import Link from './Link';
 import { media } from '../lib/media';
 import Row from './Grid/Row';
@@ -53,44 +54,47 @@ const CopyrightLink = styled.a`
   color: #3c4698;
 `;
 
-export default () => (
+export default ({ t }) => (
   <FooterContainer>
     <ContentContainer>
       <FooterText>
-        GDevelop is an open-source game creator. It can be used by anyone to
-        create any kind of 2D games.
+        {t(
+          'GDevelop is an open-source game creator. It can be used by anyone to create any kind of 2D games.'
+        )}'
       </FooterText>
       <Row>
         <Column>
-          <FooterLink to="/download/">Download the editor</FooterLink>
+          <FooterLink to="/download/">{t('Download the editor')}</FooterLink>
           <FooterLink to="https://editor.gdevelop-app.com">
-            Online game editor
+            {t('Online game editor')}
           </FooterLink>
           <FooterLink to="http://forum.compilgames.net">
-            Community forums
+            {t('Community forums')}
           </FooterLink>
           <FooterLink to="http://wiki.compilgames.net/doku.php/gdevelop5/start">
-            Documentation &amp; tutorials
+            {t('Documentation & tutorials')}
           </FooterLink>
         </Column>
         <Column>
-          <FooterLink to="/features/">Features</FooterLink>
-          <FooterLink to="/education/">Education</FooterLink>
-          <FooterLink to="/games-showcase/">Games showcase</FooterLink>
-          <FooterLink to="/contribute/">Contribute</FooterLink>
+          <FooterLink to="/features/">{t('Features')}</FooterLink>
+          <FooterLink to="/education/">{t('Education')}</FooterLink>
+          <FooterLink to="/games-showcase/">{t('Games showcase')}</FooterLink>
+          <FooterLink to="/contribute/">{t('Contribute')}</FooterLink>
         </Column>
       </Row>
       <CopyrightText>
-        GDevelop was created with ♥ by{' '}
-        <CopyrightLink href="https://www.linkedin.com/in/florianrival/">
-          Florian Rival
-        </CopyrightLink>{' '}
-        with{' '}
-        <CopyrightLink href="https://github.com/4ian/GD/graphs/contributors/">
-          contributors
-        </CopyrightLink>{' '}
-        adding features, fixing bugs, sending new examples, improving the wiki,
-        and helping each other on the forums
+        <Trans i18nKey="GDevelop was created [...][content]">
+          GDevelop was created with ♥ by{' '}
+          <CopyrightLink href="https://www.linkedin.com/in/florianrival/">
+            Florian Rival
+          </CopyrightLink>{' '}
+          with{' '}
+          <CopyrightLink href="https://github.com/4ian/GD/graphs/contributors/">
+            contributors
+          </CopyrightLink>{' '}
+          adding features, fixing bugs, sending new examples, improving the
+          wiki, and helping each other on the forums
+        </Trans>
       </CopyrightText>
     </ContentContainer>
   </FooterContainer>

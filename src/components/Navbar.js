@@ -75,7 +75,7 @@ const Icon = styled.img`
   top: 5px;
 `;
 
-const Navbar = () => (
+const Navbar = ({ t }) => (
   <NavigationBar>
     <Container>
       <LogoContainer>
@@ -84,15 +84,15 @@ const Navbar = () => (
         </Link>
       </LogoContainer>
       <LeftContainer>
-        <NavLink to="/features">Features</NavLink>
-        <NavLink to="/games-showcase">Games</NavLink>
-        <NavLink to="/education">Education</NavLink>
+        <NavLink to="/features">{t('Features')}</NavLink>
+        <NavLink to="/games-showcase">{t('Games')}</NavLink>
+        <NavLink to="/education">{t('Education')}</NavLink>
       </LeftContainer>
       <RightContainer>
         <NavLink to="http://wiki.compilgames.net/doku.php/gdevelop5/start">
-          Tutorials
+          {t('Tutorials')}
         </NavLink>
-        <NavLink to="http://forum.compilgames.net">Community</NavLink>
+        <NavLink to="http://forum.compilgames.net">{t('Community')}</NavLink>
         <NavLink to="https://github.com/4ian/GD">
           <Icon src={github} alt="Github" />
         </NavLink>
