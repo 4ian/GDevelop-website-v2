@@ -70,7 +70,7 @@ export default class DownloadPage extends React.Component {
                   {t('Create a tank shooter game')}
                 </BigGhostButton>
               </CenteredRow>
-              <BigTitle>Contribute to GDevelop')}</BigTitle>
+              <BigTitle>{t('Contribute to GDevelop')}</BigTitle>
               <Paragraph>
                 {t(
                   'Gdevelop is an open-source project. You can get involved in the community to improve it!'

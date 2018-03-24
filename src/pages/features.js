@@ -127,22 +127,25 @@ export default class FeaturesPage extends React.Component {
               </BigTitle>
               <List>
                 <ListItem>
-                {t('Communicate with external websites using HTTP requests')}
+                  {t('Communicate with external websites using HTTP requests')}
                 </ListItem>
                 <ListItem>
-                {t('Use advanced events: loops, for-each and even functions')}
+                  {t('Use advanced events: loops, for-each and even functions')}
                 </ListItem>
                 <ListItem>
-                {t('Manipulate variables with arbitrary complex structures and even JSON support')}
-
+                  {t(
+                    'Manipulate variables with arbitrary complex structures and even JSON support'
+                  )}
                 </ListItem>
                 <ListItem>
-                {t('You can even use JavaScript to code some parts of your game!')}
+                  {t(
+                    'You can even use JavaScript to code some parts of your game!'
+                  )}
                 </ListItem>
               </List>
               <CenteredRow>
                 <BigGhostButton to="http://wiki.compilgames.net/doku.php/gdevelop5/events">
-                {t('Read the documentation about events')}
+                  {t('Read the documentation about events')}
                 </BigGhostButton>
               </CenteredRow>
               <BigTitle>{t('Deploy your game everywhere')}</BigTitle>
@@ -154,18 +157,27 @@ export default class FeaturesPage extends React.Component {
                   <b>{t('Export your game for the web in one click')}</b>
                 </ListItem>
                 <ListItem>
-                  <b>{t('Export your game to iOS (with PhoneGap Build or Cordova)')}</b>
+                  <b>
+                    {t(
+                      'Export your game to iOS (with PhoneGap Build or Cordova)'
+                    )}
+                  </b>
                 </ListItem>
                 <ListItem>
-                {t('Publish your game on Kongregate, Itch.io and other gaming website!')}
+                  {t(
+                    'Publish your game on Kongregate, Itch.io and other gaming website!'
+                  )}
                 </ListItem>
                 <ListItem>
-                  {t('Export as a stand-alone executable game for Windows, macOS and Linux')} - <i>{t('Coming Soon!')}</i>
+                  {t(
+                    'Export as a stand-alone executable game for Windows, macOS and Linux'
+                  )}{' '}
+                  - <i>{t('Coming Soon!')}</i>
                 </ListItem>
               </List>
               <CenteredRow>
                 <BigGhostButton to="http://wiki.compilgames.net/doku.php/gdevelop5/publishing">
-                {t('Learn how to publish your game')}
+                  {t('Learn how to publish your game')}
                 </BigGhostButton>
               </CenteredRow>
             </TransparentContainer>

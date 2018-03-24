@@ -35,7 +35,8 @@ exports.onCreatePage = ({ page, boundActionCreators }) => {
 const makeLocalizedPages = page => {
   const pages = [];
   Object.keys(locales).map(lang => {
-    const path = locales[lang]['path'] + page.path;
+    const langPathPrefix = locales[lang]['path'];
+    const path = langPathPrefix + page.path;
 
     pages.push({
       ...page,
@@ -44,7 +45,10 @@ const makeLocalizedPages = page => {
         localeCode: lang,
         localeMessages: {
           [lang]: {
-            translation: locales[lang].messages,
+            translation: {
+              ...locales[lang].messages,
+              LANG_PATH_PREFIX: langPathPrefix ? ('/' + langPathPrefix) : '',
+            },
           },
         },
       },

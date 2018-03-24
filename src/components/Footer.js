@@ -37,7 +37,7 @@ const FooterText = styled.p`
 
 const FooterLink = styled(Link)`
   font-size: 20px;
-  color: #4ab0e4;
+  color: #3c4698;
   font-weight: 600;
   display: block;
 `;
