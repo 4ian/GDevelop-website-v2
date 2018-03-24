@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Navbar from '../components/Navbar';
+import Navbar, { NavBarSpacer } from '../components/Navbar';
 import Footer from '../components/Footer';
 import PageContainer from '../lib/PageContainer';
 import BigTitle from '../components/BigTitle';

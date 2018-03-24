@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Navbar from '../components/Navbar';
+import Navbar, { NavBarSpacer } from '../components/Navbar';
 import Footer from '../components/Footer';
 import PageContainer from '../lib/PageContainer';
 
@@ -18,19 +18,26 @@ export default class EducationPage extends React.Component {
       <PageContainer {...this.props.pathContext}>
         {t => (
           <React.Fragment>
-            <Helmet title="GDevelop - Create games without programming - Open source HTML5 and native game creator" />
+            <Helmet
+              title={t(
+                'GDevelop - Create games without programming - Open source HTML5 and native game creator'
+              )}
+            />
             <Navbar t={t} />
             <BannerContainer>
-              <WhiteBigTitle>GDevelop for education</WhiteBigTitle>
+              <NavBarSpacer />
+              <WhiteBigTitle>{t('GDevelop for education')}</WhiteBigTitle>
               <WhiteParagraph>
-                Using GDevelop in classroom is a perfect opportunity to teach
-                programming, game making and unleash students creativity.
+                {t(
+                  'Using GDevelop in classroom is a perfect opportunity to teach programming, game making and unleash students creativity.'
+                )}
               </WhiteParagraph>
             </BannerContainer>
             <TransparentContainer>
               <Paragraph>
-                GDevelop has already been used in classrooms and online courses,
-                with digital media students or children in first grade!
+                {t(
+                  'GDevelop has already been used in classrooms and online courses, with digital media students or children in first grade!'
+                )}
               </Paragraph>
               <TweetContainer>
                 <blockquote className="twitter-tweet" data-lang="en">
@@ -169,8 +176,9 @@ export default class EducationPage extends React.Component {
                 </blockquote>
               </TweetContainer>
               <Paragraph>
-                Please send us your photos and tweets if you're using GDevelop
-                for a course!
+                {t(
+                  "Please send us your photos and tweets if you're using GDevelop for a course!"
+                )}
               </Paragraph>
             </TransparentContainer>
             <MakeGameBanner />

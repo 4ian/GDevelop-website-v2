@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import background from '../../img/background.png';
 
@@ -11,6 +10,7 @@ const BannerContainer = styled.div`
   text-align: center;
 
   background-image: url(${background});
+  background-size: cover;
 
   color: white;
 `;

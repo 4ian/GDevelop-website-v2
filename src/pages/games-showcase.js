@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Navbar from '../components/Navbar';
+import Navbar, { NavBarSpacer } from '../components/Navbar';
 import Footer from '../components/Footer';
 import PageContainer from '../lib/PageContainer';
 
@@ -25,35 +25,35 @@ const games = [
     author: 'NetDancer Games',
     link:
       'https://play.google.com/store/apps/details?id=com.netdancergames.endlesskungfu',
-    linkTitle: 'Download',
+    linkType: 'download',
   },
   {
     imageSrc: require('../img/games/big_megapanicpixel.jpg'),
     title: 'Mega Panic Pixel',
     author: 'NanoSoft',
     link: 'http://gamejolt.com/games/arcade/mega-panic-pixel-alpha-wip/42664/',
-    linkTitle: 'Download',
+    linkType: 'download',
   },
   {
     imageSrc: require('../img/games/big_hyperspace.jpg'),
     title: 'Hyperspace Dogfights',
     author: ' Sleeper_Games',
     link: 'http://steamcommunity.com/sharedfiles/filedetails/?id=892686140',
-    linkTitle: 'Steam Greenlight',
+    linkType: 'Steam Greenlight',
   },
   {
     imageSrc: require('../img/games/big_iletait.png'),
     title: 'Il etait...',
     author: 'Vivet, Bravo & Corbel',
     link: 'http://www.witly.fr/portfolio/html5gamejam/',
-    linkTitle: 'Play',
+    linkType: 'play',
   },
   {
     imageSrc: require('../img/games/big_lotus.png'),
     title: 'Lotus Meditation',
     author: 'YogaPlay',
     link: 'http://gamejolt.com/games/lotus-meditation/107904',
-    linkTitle: 'Play',
+    linkType: 'play',
   },
   {
     imageSrc: require('../img/games/big_driftroads.jpg'),
@@ -70,42 +70,42 @@ const games = [
     title: 'Tank Versus Alien',
     author: 'JohNy',
     link: 'http://tva.clay.io/',
-    linkTitle: 'Play',
+    linkType: 'play',
   },
   {
     imageSrc: require('../img/games/big_dix.png'),
     title: 'DIX',
     author: 'TheFrogStudio.net',
     link: 'http://dix.thefrogstudio.net/',
-    linkTitle: 'Play',
+    linkType: 'play',
   },
   {
     imageSrc: require('../img/games/big_bios.jpg'),
     title: 'Blazing Inferno of Space',
     author: 'MillionthVector',
     link: 'http://www.compilgames.net/dl/BIoS.zip',
-    linkTitle: 'Download',
+    linkType: 'download',
   },
   {
     imageSrc: require('../img/games/big_eccedeus.jpg'),
     title: 'Ecce Deus',
     author: '4ian',
     link: 'http://www.compilgames.net/eccedeus',
-    linkTitle: 'Download',
+    linkType: 'download',
   },
   {
     imageSrc: require('../img/games/big_bzombies.jpg'),
     title: 'Bloody Zombies',
     author: 'donut_prod',
     link: 'http://www.fdumortier.com/games/Bloody zombies.exe',
-    linkTitle: 'Download',
+    linkType: 'download',
   },
   {
     imageSrc: require('../img/games/big_mathepferd.jpg'),
     title: 'Mathe Pferd',
     author: 'Trancefer Lane',
     link: 'http://trancefer.wmw.cc/index.php/mathepferd',
-    linkTitle: 'Download',
+    linkType: 'download',
   },
   {
     imageSrc: require('../img/games/big_minotaure.jpg'),
@@ -117,70 +117,70 @@ const games = [
     title: 'Run',
     author: 'graphichorse',
     link: 'http://www.graphichorsegames.com/p/run.html',
-    linkTitle: 'Download',
+    linkType: 'download',
   },
   {
     imageSrc: require('../img/games/big_stg.png'),
     title: 'Super Thomas Galaxy',
     author: 'Blady and ThomasCVB',
     link: 'http://blady.fr/stg/',
-    linkTitle: 'Download',
+    linkType: 'download',
   },
   {
     imageSrc: require('../img/games/big_gleamy.png'),
     title: 'Gleamy',
     author: 'livekontesk',
     link: 'http://www.compilgames.net/dl/hosted/gleamy_demo.rar',
-    linkTitle: 'Download',
+    linkType: 'download',
   },
   {
     imageSrc: require('../img/games/big_modelo.png'),
     title: 'Modelo',
     author: 'AjidoDm',
     link: 'http://www.compilgames.net/dl/hosted/Modelo.exe',
-    linkTitle: 'Download',
+    linkType: 'download',
   },
   {
     imageSrc: require('../img/games/big_pixelblack.jpg'),
     title: 'Pixel Black',
     author: 'EMKBRO',
     link: 'http://gamejolt.com/games/platformer/pixelblack/44361/',
-    linkTitle: 'Download',
+    linkType: 'download',
   },
   {
     imageSrc: require('../img/games/big_burgersenfolie.jpg'),
     title: 'Burgers en folie',
     author: 'Fax',
     link: 'http://www.terre-et-glace.com/projets/Burgers%20En%20Folie/jeu/html',
-    linkTitle: 'Play',
+    linkType: 'play',
   },
   {
     imageSrc: require('../img/games/big_keytonowhere.jpg'),
     title: 'Key To Nowhere',
     author: 'Ricardo Graca',
     link: 'http://rizomatico.org/games/keytonowhere/',
-    linkTitle: 'Play',
+    linkType: 'play',
   },
   {
     imageSrc: require('../img/games/big_introspectus.jpg'),
     title: 'Introspectus',
     author: 'SquameGames',
     link: 'https://squamegames.itch.io/introspectus',
-    linkTitle: 'Play',
+    linkType: 'play',
   },
   {
     imageSrc: require('../img/games/big_discolors.png'),
     title: 'Discolors',
     author: 'Ousaf',
     link: 'http://publishers.softgames.com/en/games/discolors',
-    linkTitle: 'Play',
+    linkType: 'play',
   },
   {
     imageSrc: require('../img/games/big_ruxby.jpg'),
     title: 'Ruxby',
     author: 'Twisted Kitty',
     link: 'http://legion-of-doom.wix.com/twistedkitty',
-    linkTitle: 'Play',
+    linkType: 'play',
   },
 ];
 
@@ -212,13 +212,19 @@ export default class EducationPage extends React.Component {
       <PageContainer {...this.props.pathContext}>
         {t => (
           <React.Fragment>
-            <Helmet title="GDevelop - Create games without programming - Open source HTML5 and native game creator" />
+            <Helmet
+              title={t(
+                'GDevelop - Create games without programming - Open source HTML5 and native game creator'
+              )}
+            />
             <Navbar t={t} />
             <BannerContainer>
-              <WhiteBigTitle>Games showcase</WhiteBigTitle>
+              <NavBarSpacer />
+              <WhiteBigTitle>{t('Games showcase')}</WhiteBigTitle>
               <WhiteParagraph>
-                Here are a few games created with GDevelop. The next one should
-                be yours!
+                {t(
+                  'Here are a few games created with GDevelop. The next one should be yours!'
+                )}
               </WhiteParagraph>
             </BannerContainer>
             <Spacer height="50px" />
@@ -229,11 +235,17 @@ export default class EducationPage extends React.Component {
                     <Column key={`${game.title}-${game.author}`}>
                       <GameThumbnail src={game.imageSrc} />
                       <GameThumbnailTitle textAlign="center">
-                        <b>{game.title}</b> by {game.author}
+                        <b>{game.title}</b> {t('by')} {game.author}
                       </GameThumbnailTitle>
                       {!!game.link && (
                         <CenteredRow>
-                          <BigButton to={game.link}>{game.linkTitle}</BigButton>
+                          <BigButton to={game.link}>
+                            {game.linkType === 'play'
+                              ? t('Play')
+                              : game.linkType === 'download'
+                                ? t('Download')
+                                : game.linkType}
+                          </BigButton>
                         </CenteredRow>
                       )}
                     </Column>

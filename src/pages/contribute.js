@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Navbar from '../components/Navbar';
+import Navbar, { NavBarSpacer } from '../components/Navbar';
 import Footer from '../components/Footer';
 import PageContainer from '../lib/PageContainer';
 
@@ -24,72 +24,79 @@ export default class FeaturesPage extends React.Component {
       <PageContainer {...this.props.pathContext}>
         {t => (
           <React.Fragment>
-            <Helmet title="GDevelop - Create games without programming - Open source HTML5 and native game creator" />
+            <Helmet
+              title={t(
+                'GDevelop - Create games without programming - Open source HTML5 and native game creator'
+              )}
+            />
             <Navbar t={t} />
             <BannerContainer>
-              <WhiteBigTitle>Contribute to GDevelop</WhiteBigTitle>
+              <NavBarSpacer />
+              <WhiteBigTitle>{t('Contribute to GDevelop')}</WhiteBigTitle>
               <WhiteParagraph>
-                GDevelop is an open-source project (even this website): anyone
-                can contribute and improve the software!
+                {t(
+                  'GDevelop is an open-source project (even this website): anyone can contribute and improve the software!'
+                )}
               </WhiteParagraph>
             </BannerContainer>
             <Spacer height="20px" />
             <TransparentContainer>
               <Paragraph>
-                There are multiple ways you can contribute to GDevelop,
-                depending on your time, your skills and what you're interested
-                in.
+                {t(
+                  "There are multiple ways you can contribute to GDevelop, depending on your time, your skills and what you're interested in."
+                )}
               </Paragraph>
-              <BigTitle>Help to translate GDevelop</BigTitle>
+              <BigTitle>{t('Help to translate GDevelop')}</BigTitle>
               <Paragraph>
-                GDevelop and the website can be translated in your language!
-                Translations are done on a website where everyone can get
-                involved.
+                {t(
+                  'GDevelop and the website can be translated in your language! Translations are done on a website where everyone can get involved.'
+                )}
               </Paragraph>
               <CenteredRow>
                 <BigButton to={config.crowdinUrl}>
-                  Help us by translating GDevelop!
+                  {t('Help us by translating GDevelop!')}
                 </BigButton>
               </CenteredRow>
-              <BigTitle>Help to develop GDevelop</BigTitle>
+              <BigTitle>{t('Help to develop GDevelop')}</BigTitle>
               <Paragraph>
-                It's easy to get the source code of GDevelop and start improving
-                things!
+                {t(
+                  "It's easy to get the source code of GDevelop and start improving things!"
+                )}
               </Paragraph>
               <CenteredRow>
                 <BigButton to={config.githubUrl}>
-                  Contribute on GitHub
+                  {t('Contribute on GitHub')}
                 </BigButton>
                 <BigButton to={config.githubUrl}>
-                  Edit the website on GitHub
+                  {t('Edit the website on GitHub')}
                 </BigButton>
                 <BigGhostButton to={config.developmentRoadmapUrl}>
-                  Check the development roadmap
+                  {t('Check the development roadmap')}
                 </BigGhostButton>
               </CenteredRow>
-              <BigTitle>Get involved in the community</BigTitle>
+              <BigTitle>{t('Get involved in the community')}</BigTitle>
               <Paragraph>
-                The forum and the Discord chat are the place to get and provide
-                help to other GDevelop users!
+                {t(
+                  'The forum and the Discord chat are the place to get and provide help to other GDevelop users!'
+                )}
               </Paragraph>
               <CenteredRow>
                 <BigButton to={config.forumUrl}>
-                  Go to the community forum
+                  {t('Go to the community forum')}
                 </BigButton>
                 <BigButton to={config.discordUrl}>
-                  Open the Discord chat
+                  {t('Open the Discord chat')}
                 </BigButton>
               </CenteredRow>
-              <BigTitle>Write tutorials, record videos</BigTitle>
+              <BigTitle>{t('Write tutorials, record videos')}</BigTitle>
               <Paragraph>
-                For most beginners and even advanced users, tutorials and help
-                page are the most valuable resources to create great games
-                quickly. On the wiki, you can write tutorials or improve
-                existing ones.
+                {t(
+                  'For most beginners and even advanced users, tutorials and help page are the most valuable resources to create great games quickly. On the wiki, you can write tutorials or improve existing ones.'
+                )}
               </Paragraph>
               <CenteredRow>
                 <BigButton to={config.wikiUrl}>
-                  Contribute to the wiki
+                  {t('Contribute to the wiki')}
                 </BigButton>
               </CenteredRow>
             </TransparentContainer>

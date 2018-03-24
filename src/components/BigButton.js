@@ -16,6 +16,7 @@ const BigButton = styled(Link)`
   background: #51509c;
 
   border-radius: 4px;
+  border: 1px solid white;
   box-shadow: 0 0px 0px 0 #51509c;
 
   font-size: 20px;
@@ -25,6 +26,7 @@ const BigButton = styled(Link)`
 
   &:hover {
     color: white;
+    border: 1px solid white;
     box-shadow: 0 2px 6px 0 #51509c;
   }
 `;

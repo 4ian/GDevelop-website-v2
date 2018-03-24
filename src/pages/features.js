@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Navbar from '../components/Navbar';
+import Navbar, { NavBarSpacer } from '../components/Navbar';
 import Footer from '../components/Footer';
 import PageContainer from '../lib/PageContainer';
 
@@ -23,137 +23,149 @@ export default class FeaturesPage extends React.Component {
       <PageContainer {...this.props.pathContext}>
         {t => (
           <React.Fragment>
-            <Helmet title="GDevelop - Create games without programming - Open source HTML5 and native game creator" />
+            <Helmet
+              title={t(
+                'GDevelop - Create games without programming - Open source HTML5 and native game creator'
+              )}
+            />
             <Navbar t={t} />
             <BannerContainer>
-              <WhiteBigTitle>Fully featured</WhiteBigTitle>
+              <NavBarSpacer />
+              <WhiteBigTitle>{t('Fully featured')}</WhiteBigTitle>
               <WhiteParagraph>
-                GDevelop is bundled with dozens of features to imagine and
-                create any kind of games.
+                {t(
+                  'GDevelop is bundled with dozens of features to imagine and create any kind of games.'
+                )}
               </WhiteParagraph>
             </BannerContainer>
             <TransparentContainer>
-              <BigTitle>Objects for your games</BigTitle>
+              <BigTitle>{t('Objects for your games')}</BigTitle>
               <List>
                 <ListItem>
-                  <b>Sprites</b> with multiple animations
+                  <b>{t('Sprites')}</b> {t('with multiple animations')}
                 </ListItem>
-                <ListItem>"9 patch" and tiled sprites</ListItem>
-                <ListItem>Text objects</ListItem>
+                <ListItem>{t('"9 patch" and tiled sprites')}</ListItem>
+                <ListItem>{t('Text objects')}</ListItem>
                 <ListItem>
-                  Draw <b>custom shapes</b> on screen with the Shape Painter
+                  {t('Draw custom shapes on screen with the Shape Painter')}
                 </ListItem>
-                <ListItem>Support for custom collision masks</ListItem>
+                <ListItem>{t('Support for custom collision masks')}</ListItem>
               </List>
               <CenteredRow>
                 <BigGhostButton to="http://wiki.compilgames.net/doku.php/gdevelop5/objects">
-                  Read the documentation for all objects
+                  {t('Read the documentation for all objects')}
                 </BigGhostButton>
               </CenteredRow>
-              <BigTitle>Add behaviors to your game objects</BigTitle>
+              <BigTitle>{t('Add behaviors to your game objects')}</BigTitle>
               <List>
                 <ListItem>
-                  <b>Physics engine</b> -{' '}
-                  <i>Add realistic behavior to your objects</i>
+                  <b>{t('Physics engine')}</b> -{' '}
+                  <i>{t('Add realistic behavior to your objects')}</i>
                 </ListItem>
                 <ListItem>
-                  Pathfinding -{' '}
-                  <i>Have your objects move and avoiding obstacles</i>
+                  {t('Pathfinding')} -{' '}
+                  <i>{t('Have your objects move and avoiding obstacles')}</i>
                 </ListItem>
-                <ListItem>Top-down movement</ListItem>
+                <ListItem>{t('Top-down movement')}</ListItem>
                 <ListItem>
-                  <b>Platformer</b> engine -{' '}
-                  <i>create platformer games in a breeze</i>
-                </ListItem>
-                <ListItem>
-                  Draggable objects -{' '}
-                  <i>quickly make your objects draggable with mouse/touch</i>
+                  <b>{t('Platformer engine')}</b> -{' '}
+                  <i>{t('create platformer games in a breeze')}</i>
                 </ListItem>
                 <ListItem>
-                  And more, to automate current tasks and behaviors in a few
-                  clicks!
+                  {t('Draggable objects')} -{' '}
+                  <i>
+                    {t('quickly make your objects draggable with mouse/touch')}
+                  </i>
+                </ListItem>
+                <ListItem>
+                  {t(
+                    'And more, to automate current tasks and behaviors in a few clicks!'
+                  )}
                 </ListItem>
               </List>
               <CenteredRow>
                 <BigGhostButton to="http://wiki.compilgames.net/doku.php/gdevelop5/behaviors">
-                  Read the documentation for all behaviors
+                  {t('Read the documentation for all behaviors')}
                 </BigGhostButton>
               </CenteredRow>
-              <BigTitle>Design advanced levels and interfaces</BigTitle>
+              <BigTitle>{t('Design advanced levels and interfaces')}</BigTitle>
               <List>
                 <ListItem>
-                  The scene editor lets you <b>visually edit your levels</b>
+                  {t('The scene editor lets you visually edit your levels')}
                 </ListItem>
                 <ListItem>
-                  Support for multiple layers -{' '}
-                  <i>Add interfaces and create parallax effects</i>
+                  {t('Support for multiple layers')} -{' '}
+                  <i>{t('Add interfaces and create parallax effects')}</i>
                 </ListItem>
                 <ListItem>
-                  Create your levels dynamically with external layouts
+                  {t('Create your levels dynamically with external layouts')}
                 </ListItem>
                 <ListItem>
-                  Integrated debugger and performance profilers -{' '}
-                  <i>coming soon!</i>
+                  {t('Integrated debugger and performance profilers')} -{' '}
+                  <i>{t('coming soon!')}</i>
                 </ListItem>
               </List>
               <CenteredRow>
                 <BigGhostButton to="http://wiki.compilgames.net/doku.php/gdevelop5/interface">
-                  Read the documentation for editors
+                  {t('Read the documentation for editors')}
                 </BigGhostButton>
               </CenteredRow>
-              <BigTitle>Make desktop &amp; mobile-ready games</BigTitle>
+              <BigTitle>{t('Make desktop & mobile-ready games')}</BigTitle>
               <List>
-                <ListItem>Save player data in browser/local storage</ListItem>
-                <ListItem>Full support for sound effects and music</ListItem>
                 <ListItem>
-                  Support for <b>touchscreens</b> & multi-touch
+                  {t('Save player data in browser/local storage')}
+                </ListItem>
+                <ListItem>
+                  {t('Full support for sound effects and music')}
+                </ListItem>
+                <ListItem>
+                  {t('Support for touchscreens & multi-touch')}
                 </ListItem>
               </List>
-              <BigTitle>Build ambitious games with advanced features</BigTitle>
+              <BigTitle>
+                {t('Build ambitious games with advanced features')}
+              </BigTitle>
               <List>
                 <ListItem>
-                  Communicate with external websites using HTTP requests
+                {t('Communicate with external websites using HTTP requests')}
                 </ListItem>
                 <ListItem>
-                  Use advanced events: <b>loops</b>, for-each and even functions
+                {t('Use advanced events: loops, for-each and even functions')}
                 </ListItem>
                 <ListItem>
-                  Manipulate variables with arbitrary complex structures and
-                  even JSON support
+                {t('Manipulate variables with arbitrary complex structures and even JSON support')}
+
                 </ListItem>
                 <ListItem>
-                  Use <b>Javascript</b> to code any part of your game
+                {t('You can even use JavaScript to code some parts of your game!')}
                 </ListItem>
               </List>
               <CenteredRow>
                 <BigGhostButton to="http://wiki.compilgames.net/doku.php/gdevelop5/events">
-                  Read the documentation about events
+                {t('Read the documentation about events')}
                 </BigGhostButton>
               </CenteredRow>
-              <BigTitle>Deploy your game everywhere</BigTitle>
+              <BigTitle>{t('Deploy your game everywhere')}</BigTitle>
               <List>
                 <ListItem>
-                  One click export for <b>Android</b>
+                  <b>{t('One click export for Android')}</b>
                 </ListItem>
                 <ListItem>
-                  Export your game for <b>the web</b> in one click
+                  <b>{t('Export your game for the web in one click')}</b>
                 </ListItem>
                 <ListItem>
-                  Export your game to <b>iOS</b> (with PhoneGap Build or
-                  Cordova)
+                  <b>{t('Export your game to iOS (with PhoneGap Build or Cordova)')}</b>
                 </ListItem>
                 <ListItem>
-                  Publish your game on Kongregate, Itch.io and other gaming
-                  website!
+                {t('Publish your game on Kongregate, Itch.io and other gaming website!')}
                 </ListItem>
                 <ListItem>
-                  Export as a stand-alone executable game for Windows, macOS and
-                  Linux - <i>Coming Soon!</i>
+                  {t('Export as a stand-alone executable game for Windows, macOS and Linux')} - <i>{t('Coming Soon!')}</i>
                 </ListItem>
               </List>
               <CenteredRow>
                 <BigGhostButton to="http://wiki.compilgames.net/doku.php/gdevelop5/publishing">
-                  Learn how to publish your game
+                {t('Learn how to publish your game')}
                 </BigGhostButton>
               </CenteredRow>
             </TransparentContainer>

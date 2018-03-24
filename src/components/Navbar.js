@@ -4,15 +4,18 @@ import Link from './Link';
 import { media } from '../lib/media';
 
 import github from '../img/github-icon.svg';
-import logo from '../img/logo.svg';
+import logo from '../img/logo-white.svg';
+import background from '../img/background.png';
 
 const NavigationBar = styled.nav`
-  padding-top: 10px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
 
-  background-color: #f7f7f7;
+  background-image: ${props =>
+    props.transparent ? 'none' : `url(${background})`};
+  background-size: cover;
+
   ${media.tablet`
     padding-top: 5px;
     margin-left: 0;
@@ -24,6 +27,10 @@ const Container = styled.div`
   align-items: stretch;
   display: flex;
   width: 100%;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 
   ${media.tablet`
     display: block;
@@ -31,7 +38,7 @@ const Container = styled.div`
 `;
 
 const NavLink = styled(Link)`
-  color: #6a6a6a;
+  color: white;
   line-height: 3.25rem;
   padding: 0 8px;
   position: relative;
@@ -41,6 +48,10 @@ const NavLink = styled(Link)`
     line-height: 1.25rem;
     padding: 5px 8px;
   `};
+
+  &:hover {
+    color: white;
+  }
 `;
 
 const LeftContainer = styled.div`
@@ -75,30 +86,71 @@ const Icon = styled.img`
   top: 5px;
 `;
 
-const Navbar = ({ t }) => (
-  <NavigationBar>
-    <Container>
-      <LogoContainer>
-        <Link to="/">
-          <img src={logo} alt="GDevelop" style={{ width: '200px' }} />
-        </Link>
-      </LogoContainer>
-      <LeftContainer>
-        <NavLink to="/features">{t('Features')}</NavLink>
-        <NavLink to="/games-showcase">{t('Games')}</NavLink>
-        <NavLink to="/education">{t('Education')}</NavLink>
-      </LeftContainer>
-      <RightContainer>
-        <NavLink to="http://wiki.compilgames.net/doku.php/gdevelop5/start">
-          {t('Tutorials')}
-        </NavLink>
-        <NavLink to="http://forum.compilgames.net">{t('Community')}</NavLink>
-        <NavLink to="https://github.com/4ian/GD">
-          <Icon src={github} alt="Github" />
-        </NavLink>
-      </RightContainer>
-    </Container>
-  </NavigationBar>
-);
+export const NavBarSpacer = styled.div`
+  height: 60px;
+`;
+
+class Navbar extends React.Component {
+  state = {
+    transparent: true,
+  };
+
+  componentDidMount() {
+    //eslint-disable-next-line
+    if (typeof window !== 'undefined') {
+      //eslint-disable-next-line
+      window.addEventListener('scroll', this.handleScroll);
+    }
+  }
+
+  componentWillUnmount() {
+    //eslint-disable-next-line
+    if (typeof window !== 'undefined') {
+      //eslint-disable-next-line
+      window.removeEventListener('scroll', this.handleScroll);
+    }
+  }
+
+  handleScroll = () => {
+    //eslint-disable-next-line
+    const yOffset = window.pageYOffset || document.documentElement.scrollTop;
+    this.setState({
+      transparent: yOffset < 35, //eslint-disable-line
+    });
+  };
+
+  render() {
+    const { t } = this.props;
+    const { transparent, open } = this.state;
+
+    return (
+      <NavigationBar transparent={transparent}>
+        <Container>
+          <LogoContainer>
+            <Link to="/">
+              <img src={logo} alt="GDevelop" style={{ width: '200px' }} />
+            </Link>
+          </LogoContainer>
+          <LeftContainer>
+            <NavLink to="/features">{t('Features')}</NavLink>
+            <NavLink to="/games-showcase">{t('Games')}</NavLink>
+            <NavLink to="/education">{t('Education')}</NavLink>
+          </LeftContainer>
+          <RightContainer>
+            <NavLink to="http://wiki.compilgames.net/doku.php/gdevelop5/start">
+              {t('Tutorials')}
+            </NavLink>
+            <NavLink to="http://forum.compilgames.net">
+              {t('Community')}
+            </NavLink>
+            <NavLink to="https://github.com/4ian/GD">
+              <Icon src={github} alt="Github" />
+            </NavLink>
+          </RightContainer>
+        </Container>
+      </NavigationBar>
+    );
+  }
+}
 
 export default Navbar;

@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Navbar from '../components/Navbar';
+import Navbar, { NavBarSpacer } from '../components/Navbar';
 import Footer from '../components/Footer';
 import PageContainer from '../lib/PageContainer';
 
@@ -36,10 +36,16 @@ export default class IndexPage extends React.Component {
       <PageContainer {...this.props.pathContext}>
         {t => (
           <React.Fragment>
-            <Helmet title="GDevelop - Create games without programming - Open source HTML5 and native game creator" />
+            <Helmet
+              title={t(
+                'GDevelop - Create games without programming - Open source HTML5 and native game creator'
+              )}
+            />
             <Navbar t={t} />
             <LandingContainer>
+              <NavBarSpacer />
               <WhiteBigTitle>{t('Create your own games')}</WhiteBigTitle>
+              <Spacer height={'20px'} />
               <Row reverse>
                 <CenteredColumn flex={8}>
                   <RightImage src={landingScreen} />
