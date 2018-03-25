@@ -6,6 +6,7 @@ import faChevronUp from '@fortawesome/fontawesome-free-solid/faChevronUp';
 
 import Link from './Link';
 import { media } from '../lib/media';
+import config from '../config';
 
 import github from '../img/github-icon.svg';
 import logo from '../img/logo-white.svg';
@@ -183,13 +184,9 @@ class Navbar extends React.Component {
               <NavLink to="/education">{t('Education')}</NavLink>
             </LeftContainer>
             <RightContainer>
-              <NavLink to="http://wiki.compilgames.net/doku.php/gdevelop5/start">
-                {t('Tutorials')}
-              </NavLink>
-              <NavLink to="http://forum.compilgames.net">
-                {t('Community')}
-              </NavLink>
-              <NavLink to="https://github.com/4ian/GD">
+              <NavLink to={config.wikiUrl}>{t('Tutorials')}</NavLink>
+              <NavLink to="/download">{t('Download')}</NavLink>
+              <NavLink to={config.githubUrl}>
                 <Icon src={github} alt="Github" />
               </NavLink>
             </RightContainer>

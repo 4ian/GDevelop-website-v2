@@ -14,6 +14,7 @@ import Paragraph from '../components/Paragraph';
 import BigButton from '../components/BigButton';
 import BannerContainer from '../components/Containers/BannerContainer';
 import TransparentContainer from '../components/Containers/TransparentContainer';
+import TransparentDeprecatedContainer from '../components/Containers/TransparentDeprecatedContainer';
 import WhiteBigTitle from '../components/WhiteBigTitle';
 import WhiteParagraph from '../components/WhiteParagraph';
 import config from '../config';
@@ -22,6 +23,7 @@ import CenteredRow from '../components/Grid/CenteredRow';
 import Spacer from '../components/Grid/Spacer';
 import BigGhostButton from '../components/BigGhostButton';
 import BigTitle from '../components/BigTitle';
+import ExplanationText from '../components/ExplanationText';
 
 export default class DownloadPage extends React.Component {
   render() {
@@ -62,7 +64,7 @@ export default class DownloadPage extends React.Component {
                   <FontAwesomeIcon icon={faLinux} /> Linux
                 </BigButton>
                 <BigGhostButton to={config.onlineEditorUrl} target="_blank">
-                <FontAwesomeIcon icon={faChrome} /> {t('Try it online')}
+                  <FontAwesomeIcon icon={faChrome} /> {t('Try it online')}
                 </BigGhostButton>
               </CenteredRow>
               <Paragraph>
@@ -82,10 +84,23 @@ export default class DownloadPage extends React.Component {
                   {t('Create a tank shooter game')}
                 </BigGhostButton>
               </CenteredRow>
+              <Paragraph>
+                {t(
+                  'The forum and the Discord chat are the place to get and provide help to other GDevelop users!'
+                )}
+              </Paragraph>
+              <CenteredRow>
+                <BigGhostButton to={config.forumUrl}>
+                  {t('Go to the community forum')}
+                </BigGhostButton>
+                <BigGhostButton to={config.discordUrl}>
+                  {t('Open the Discord chat')}
+                </BigGhostButton>
+              </CenteredRow>
               <BigTitle>{t('Contribute to GDevelop')}</BigTitle>
               <Paragraph>
                 {t(
-                  'Gdevelop is an open-source project. You can get involved in the community to improve it!'
+                  'GDevelop is an open-source project. You can get involved in the community to improve it!'
                 )}
               </Paragraph>
               <CenteredRow>
@@ -94,6 +109,33 @@ export default class DownloadPage extends React.Component {
                 </BigButton>
               </CenteredRow>
             </TransparentContainer>
+            <TransparentDeprecatedContainer>
+              <BigTitle>{t('GDevelop 4 (old version)')}</BigTitle>
+              <Paragraph>
+                {t(
+                  "Gdevelop 4 can still be downloaded. GDevelop 5 is recommended for any new user as GDevelop 4 won't be updated anymore! No support will be provided in the future for GDevelop 4: we recommend any GDevelop 4 user to upgrade to GDevelop 5."
+                )}
+              </Paragraph>
+              <CenteredRow>
+                <BigButton
+                  to="https://github.com/4ian/GD/releases/download/4.0.96/gd4096.exe"
+                  target="_blank"
+                >
+                  {t('Windows')}
+                </BigButton>
+                <BigButton
+                  to="http://software.opensuse.org/download.html?project=home%3Avictorlevasseur&amp;package=gdevelop"
+                  target="_blank"
+                >
+                  {t('OpenSUSE/Fedora/Arch')}
+                </BigButton>
+              </CenteredRow>
+              <ExplanationText>
+                Even if GDevelop 4 supports native games, we recommend switching
+                to GDevelop 5 and HTML5 games, which are better supported.
+                Native games will be added to GDevelop 5 later.
+              </ExplanationText>
+            </TransparentDeprecatedContainer>
             <Spacer height="50px" />
             <Footer t={t} />
           </React.Fragment>

@@ -3,9 +3,9 @@ export default {
   githubWebsiteUrl: 'https://github.com/4ian/GD',
   developmentRoadmapUrl: 'https://trello.com/b/qf0lM7k8/gdevelop-roadmap',
   crowdinUrl: 'https://crowdin.com/project/gdevelop',
-  forumUrl: 'https://forum.compilgames.net',
+  forumUrl: 'http://forum.compilgames.net',
   discordUrl: 'https://discordapp.com/channels/258623956158906368/377571085643677696',
-  wikiUrl: 'https://wiki.compilgames.net',
+  wikiUrl: 'http://wiki.compilgames.net',
 
   onlineEditorUrl: 'https://editor.gdevelop-app.com',
 
