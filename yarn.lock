@@ -4318,6 +4318,13 @@ gatsby-plugin-google-fonts@^0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-fonts/-/gatsby-plugin-google-fonts-0.0.4.tgz#dc1402a71f27c3ae6caee10777d10adadf74bd7c"
 
+gatsby-plugin-manifest@^1.0.15:
+  version "1.0.15"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-1.0.15.tgz#849d305adabe39445b9f862b187f4c56e608bd72"
+  dependencies:
+    babel-runtime "^6.26.0"
+    bluebird "^3.5.0"
+
 gatsby-plugin-netlify-cms@^1.0.9:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-cms/-/gatsby-plugin-netlify-cms-1.0.10.tgz#26105646f8ecd7e1851ead0099c017b9ca28e4de"

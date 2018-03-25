@@ -20,6 +20,27 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'GDevelop website',
+        short_name: 'GDevelop website',
+        background_color: '#ffffff',
+        theme_color: '#9746c1',
+        display: 'browser',
+        icons: [
+          {
+            // Everything in /static will be copied to an equivalent
+            // directory in /public during development and build, so
+            // assuming your favicons are in /static/favicons,
+            // you can reference them here
+            src: `/favicons/favicon.ico`,
+            sizes: `256x256`,
+            type: `image/png`,
+          },
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
