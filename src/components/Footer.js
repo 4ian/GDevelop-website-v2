@@ -65,7 +65,7 @@ export default ({ t }) => (
       <Row>
         <Column>
           <FooterLink to="/download/">{t('Download the editor')}</FooterLink>
-          <FooterLink to="https://editor.gdevelop-app.com">
+          <FooterLink to="https://editor.gdevelop-app.com" alt="_blank" rel="noopener">
             {t('Online game editor')}
           </FooterLink>
           <FooterLink to="http://forum.compilgames.net">

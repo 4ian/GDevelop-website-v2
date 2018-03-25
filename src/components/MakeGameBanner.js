@@ -17,7 +17,7 @@ const MakeGameBanner = ({ t, title, text }) => (
         )}
     </WhiteParagraph>
     <CenteredRow>
-      <WhiteBigButton to={config.onlineEditorUrl}>
+      <WhiteBigButton to={config.onlineEditorUrl} alt="_blank" rel="noopener">
         {t('Try it online')}
       </WhiteBigButton>
       <WhiteBigButton to="/download/">{t('Download')}</WhiteBigButton>

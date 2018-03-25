@@ -69,7 +69,11 @@ export default class IndexPage extends React.Component {
                     )}
                   </WhiteParagraph>
                   <CenteredRow>
-                    <WhiteBigButton to={config.onlineEditorUrl}>
+                    <WhiteBigButton
+                      to={config.onlineEditorUrl}
+                      alt="_blank"
+                      rel="noopener"
+                    >
                       {t('Try it online')}
                     </WhiteBigButton>
                     <WhiteBigButton to="/download/">
