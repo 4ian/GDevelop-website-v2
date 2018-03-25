@@ -10,7 +10,7 @@ import config from '../config';
 
 import github from '../img/github-icon.svg';
 import logo from '../img/logo-white.svg';
-import background from '../img/background.png';
+import background from '../img/background.jpg';
 
 const NavigationBar = styled.nav`
   width: 100%;

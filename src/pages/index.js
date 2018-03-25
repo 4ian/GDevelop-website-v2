@@ -57,7 +57,10 @@ export default class IndexPage extends React.Component {
               <Spacer height={'20px'} />
               <Row reverse>
                 <CenteredColumn flex={8}>
-                  <RightImage src={landingScreen} />
+                  <RightImage
+                    src={landingScreen}
+                    alt="GDevelop game maker software - create video games without coding"
+                  />
                 </CenteredColumn>
                 <CenteredColumn flex={5}>
                   <WhiteParagraph textAlign="center">
@@ -128,7 +131,11 @@ export default class IndexPage extends React.Component {
                   'What makes GDevelop unique and so easy to use are the events. Events are a powerful way to express the logic of your game, without having to learn a programming language.'
                 )}
               </Paragraph>
-              <CenteredBigImage maxWidth="800px" src={events} />
+              <CenteredBigImage
+                maxWidth="800px"
+                src={events}
+                alt="Events enable easy game creation"
+              />
               <ExplanationText>
                 {t(
                   'When Space is pressed, the character animation and a sound are played. If a bomb touches the character, they are both destroyed.'
@@ -161,12 +168,14 @@ export default class IndexPage extends React.Component {
                 <BigGhostButton
                   to="http://wiki.compilgames.net/doku.php/gdevelop5/tutorials/platform-game/start"
                   target="_blank"
+                  rel="noopener"
                 >
                   {t('Create a platformer game')}
                 </BigGhostButton>
                 <BigGhostButton
                   to="http://wiki.compilgames.net/doku.php/gdevelop5/tutorials/tank-shooter"
                   target="_blank"
+                  rel="noopener"
                 >
                   {t('Create a tank shooter game')}
                 </BigGhostButton>

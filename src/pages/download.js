@@ -74,12 +74,14 @@ export default class DownloadPage extends React.Component {
                 <BigGhostButton
                   to="http://wiki.compilgames.net/doku.php/gdevelop5/tutorials/platform-game/start"
                   target="_blank"
+                  rel="noopener"
                 >
                   {t('Create a platformer game')}
                 </BigGhostButton>
                 <BigGhostButton
                   to="http://wiki.compilgames.net/doku.php/gdevelop5/tutorials/tank-shooter"
                   target="_blank"
+                  rel="noopener"
                 >
                   {t('Create a tank shooter game')}
                 </BigGhostButton>

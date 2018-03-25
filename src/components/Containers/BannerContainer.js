@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import background from '../../img/background.png';
+import background from '../../img/background.jpg';
 
 const BannerContainer = styled.div`
   width:100%;
@@ -9,6 +9,7 @@ const BannerContainer = styled.div`
   display: block;
   text-align: center;
 
+  background-color: #7847c0;
   background-image: url(${background});
   background-size: cover;
 
