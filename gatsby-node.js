@@ -47,7 +47,7 @@ const makeLocalizedPages = page => {
           [lang]: {
             translation: {
               ...locales[lang].messages,
-              LANG_PATH_PREFIX: langPathPrefix ? ('/' + langPathPrefix) : '',
+              LANG_PATH_PREFIX: langPathPrefix ? '/' + langPathPrefix : '',
             },
           },
         },

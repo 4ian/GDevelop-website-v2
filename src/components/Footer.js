@@ -60,7 +60,7 @@ export default ({ t }) => (
       <FooterText>
         {t(
           'GDevelop is an open-source game creator. It can be used by anyone to create any kind of 2D games.'
-        )}'
+        )}
       </FooterText>
       <Row>
         <Column>
