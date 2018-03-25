@@ -4,7 +4,10 @@ const path = require('path');
 const i18nPath = path.join(__dirname, 'i18n');
 
 const getAllLocales = () =>
-  fs.readdirSync(i18nPath).map(filename => filename.replace('.json', ''));
+  fs
+    .readdirSync(i18nPath)
+    .map(filename => filename.replace('.json', ''))
+    .filter(langCode => langCode !== 'catalog');
 
 const getLocaleMessages = langCode => {
   try {
