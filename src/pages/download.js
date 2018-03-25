@@ -1,5 +1,11 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faWindows from '@fortawesome/fontawesome-free-brands/faWindows';
+import faApple from '@fortawesome/fontawesome-free-brands/faApple';
+import faLinux from '@fortawesome/fontawesome-free-brands/faLinux';
+import faChrome from '@fortawesome/fontawesome-free-brands/faChrome';
+
 import Navbar, { NavBarSpacer } from '../components/Navbar';
 import Footer from '../components/Footer';
 import PageContainer from '../lib/PageContainer';
@@ -46,11 +52,17 @@ export default class DownloadPage extends React.Component {
                 )}
               </Paragraph>
               <CenteredRow>
-                <BigButton to={config.gdevelopWindowsUrl}>Windows</BigButton>
-                <BigButton to={config.gdevelopMacOSUrl}>macOS</BigButton>
-                <BigButton to={config.gdevelopLinuxUrl}>Linux</BigButton>
+                <BigButton to={config.gdevelopWindowsUrl}>
+                  <FontAwesomeIcon icon={faWindows} /> Windows
+                </BigButton>
+                <BigButton to={config.gdevelopMacOSUrl}>
+                  <FontAwesomeIcon icon={faApple} /> macOS
+                </BigButton>
+                <BigButton to={config.gdevelopLinuxUrl}>
+                  <FontAwesomeIcon icon={faLinux} /> Linux
+                </BigButton>
                 <BigGhostButton to={config.onlineEditorUrl} target="_blank">
-                  {t('Try it online')}
+                <FontAwesomeIcon icon={faChrome} /> {t('Try it online')}
                 </BigGhostButton>
               </CenteredRow>
               <Paragraph>

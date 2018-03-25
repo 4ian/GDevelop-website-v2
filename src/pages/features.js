@@ -181,7 +181,10 @@ export default class FeaturesPage extends React.Component {
                 </BigGhostButton>
               </CenteredRow>
             </TransparentContainer>
-            <BottomCenteredBigImage src={chromeWithGame} />
+            <BottomCenteredBigImage
+              src={chromeWithGame}
+              alt="Make HTML5 games for Chrome, Firefox, Safari, iOS, Android, Edge and other modern browsers"
+            />
             <MakeGameBanner />
             <Footer t={t} />
           </React.Fragment>

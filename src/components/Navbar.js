@@ -1,5 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faBars from '@fortawesome/fontawesome-free-solid/faBars';
+import faChevronUp from '@fortawesome/fontawesome-free-solid/faChevronUp';
+
 import Link from './Link';
 import { media } from '../lib/media';
 
@@ -28,12 +32,22 @@ const Container = styled.div`
   display: flex;
   width: 100%;
   padding-top: 10px;
-  padding-bottom: 5px;
-  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
   padding-right: 10px;
 
   ${media.tablet`
     display: block;
+  `};
+`;
+
+const ItemsContainer = styled.div`
+  flex: 1;
+  display: flex;
+  align-items: center;
+
+  ${media.tablet`
+    display: ${props => (props.open ? 'block' : 'none')};
   `};
 `;
 
@@ -75,8 +89,25 @@ const LogoContainer = styled.div`
   margin-left: 15px;
   margin-right: 15px;
   ${media.tablet`
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
   `};
+`;
+
+const MenuIcon = styled.a`
+  display: none;
+  color: white;
+  font-size: 40px;
+
+  ${media.tablet`
+    display: inline-block;
+  `};
+
+  &:hover {
+    color: white;
+  }
 `;
 
 const Icon = styled.img`
@@ -93,6 +124,7 @@ export const NavBarSpacer = styled.div`
 class Navbar extends React.Component {
   state = {
     transparent: true,
+    open: false,
   };
 
   componentDidMount() {
@@ -119,34 +151,49 @@ class Navbar extends React.Component {
     });
   };
 
+  toggleOpen = () => {
+    this.setState({
+      open: !this.state.open,
+    });
+  };
+
   render() {
     const { t } = this.props;
     const { transparent, open } = this.state;
 
     return (
-      <NavigationBar transparent={transparent}>
+      <NavigationBar transparent={transparent && !open}>
         <Container>
           <LogoContainer>
             <Link to="/">
               <img src={logo} alt="GDevelop" style={{ width: '200px' }} />
             </Link>
+            <MenuIcon onClick={this.toggleOpen}>
+              {open ? (
+                <FontAwesomeIcon icon={faChevronUp} />
+              ) : (
+                <FontAwesomeIcon icon={faBars} />
+              )}
+            </MenuIcon>
           </LogoContainer>
-          <LeftContainer>
-            <NavLink to="/features">{t('Features')}</NavLink>
-            <NavLink to="/games-showcase">{t('Games')}</NavLink>
-            <NavLink to="/education">{t('Education')}</NavLink>
-          </LeftContainer>
-          <RightContainer>
-            <NavLink to="http://wiki.compilgames.net/doku.php/gdevelop5/start">
-              {t('Tutorials')}
-            </NavLink>
-            <NavLink to="http://forum.compilgames.net">
-              {t('Community')}
-            </NavLink>
-            <NavLink to="https://github.com/4ian/GD">
-              <Icon src={github} alt="Github" />
-            </NavLink>
-          </RightContainer>
+          <ItemsContainer open={open}>
+            <LeftContainer>
+              <NavLink to="/features">{t('Features')}</NavLink>
+              <NavLink to="/games-showcase">{t('Games')}</NavLink>
+              <NavLink to="/education">{t('Education')}</NavLink>
+            </LeftContainer>
+            <RightContainer>
+              <NavLink to="http://wiki.compilgames.net/doku.php/gdevelop5/start">
+                {t('Tutorials')}
+              </NavLink>
+              <NavLink to="http://forum.compilgames.net">
+                {t('Community')}
+              </NavLink>
+              <NavLink to="https://github.com/4ian/GD">
+                <Icon src={github} alt="Github" />
+              </NavLink>
+            </RightContainer>
+          </ItemsContainer>
         </Container>
       </NavigationBar>
     );

@@ -5,6 +5,10 @@
   "version": "2.0.0",
   "author": "Florian Rival",
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.4",
+    "@fortawesome/fontawesome-free-brands": "^5.0.8",
+    "@fortawesome/fontawesome-free-solid": "^5.0.8",
+    "@fortawesome/react-fontawesome": "^0.0.18",
     "bulma": "^0.6.0",
     "gatsby": "^1.9.237",
     "gatsby-link": "^1.6.37",
