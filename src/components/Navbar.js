@@ -159,11 +159,11 @@ class Navbar extends React.Component {
   };
 
   render() {
-    const { t } = this.props;
+    const { t, noTransparency } = this.props;
     const { transparent, open } = this.state;
 
     return (
-      <NavigationBar transparent={transparent && !open}>
+      <NavigationBar transparent={transparent && !open && !noTransparency}>
         <Container>
           <LogoContainer>
             <Link to="/">

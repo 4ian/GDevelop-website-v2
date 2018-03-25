@@ -19,10 +19,6 @@ console.log(`${chalk.blue(Object.keys(locales).length)} locales loaded`);
 exports.onCreatePage = ({ page, boundActionCreators }) => {
   const { createPage, deletePage } = boundActionCreators;
 
-  if (page.path.includes('404')) {
-    return; // no need for localized 404 pages
-  }
-
   return new Promise(resolve => {
     const pages = makeLocalizedPages(page);
     deletePage(page);

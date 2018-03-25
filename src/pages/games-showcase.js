@@ -15,8 +15,26 @@ import Row from '../components/Grid/Row';
 import CenteredRow from '../components/Grid/CenteredRow';
 import Column from '../components/Grid/Column';
 import GameThumbnail from '../components/GameThumbnail';
-import GameThumbnailTitle from '../components/GameThumbnailTitle';
+import GameTitle from '../components/GameTitle';
+import BubBanner from '../components/BubBanner';
+import Paragraph from '../components/Paragraph';
+import BigGhostButton from '../components/BigGhostButton';
+import BigTitle from '../components/BigTitle';
 import Spacer from '../components/Grid/Spacer';
+
+const submitGameBody = `
+Hi all!
+
+I made/know a game made with GDevelop and I think it would be great to have it on the website.
+
+## Screenshots
+
+=> Insert one or more screenshots. Make sure they are extra pretty! :)
+
+## Name, links and details
+
+=> Please enter here your name, the game name and a link to download or play to it.
+`;
 
 const games = [
   {
@@ -227,16 +245,16 @@ export default class EducationPage extends React.Component {
                 )}
               </WhiteParagraph>
             </BannerContainer>
-            <Spacer height="50px" />
+            <BubBanner />
             <TransparentContainer>
               {groupByNUple(games, 2).map((groupedGames, index) => (
                 <Row key={index}>
                   {groupedGames.map((game, index) => (
                     <Column key={`${game.title}-${game.author}`}>
                       <GameThumbnail src={game.imageSrc} />
-                      <GameThumbnailTitle textAlign="center">
+                      <GameTitle textAlign="center">
                         <b>{game.title}</b> {t('by')} {game.author}
-                      </GameThumbnailTitle>
+                      </GameTitle>
                       {!!game.link && (
                         <CenteredRow>
                           <BigButton to={game.link}>
@@ -252,7 +270,23 @@ export default class EducationPage extends React.Component {
                   ))}
                 </Row>
               ))}
+              <BigTitle>{t('Made a nice game with GDevelop?')}</BigTitle>
+              <Paragraph>
+                {t(
+                  "We'll love to know about your game and add it here. Make sure you have beautiful screenshots ready and that the game is high quality :)"
+                )}
+              </Paragraph>
+              <CenteredRow>
+                <BigGhostButton
+                  to={`https://github.com/4ian/GDevelop-website/issues/new?body=${encodeURIComponent(
+                    submitGameBody
+                  )}&title=Game%20for%20the%20game%20showcase`}
+                >
+                  {t('Submit your game')}
+                </BigGhostButton>
+              </CenteredRow>
             </TransparentContainer>
+            <Spacer height="50px" />
             <MakeGameBanner />
             <Footer t={t} />
           </React.Fragment>
