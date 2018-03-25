@@ -24,7 +24,7 @@ import ExplanationText from '../components/ExplanationText';
 import events from '../img/events.png';
 import gdevelopWikiTutorials from '../img/gdevelop-wiki-tutorials.png';
 import gamesOnMobileTabletDesktopWeb from '../img/games-on-mobile-tablet-desktop-web.png';
-import landingScreen from '../img/landing-screen.png';
+import landingScreen from '../img/landing-screen.jpg';
 import platformerSceneEditor from '../img/platformer-scene-editor.png';
 import platformer2SceneEditor from '../img/platformer2-scene-editor.png';
 import spaceShooterSceneEditor from '../img/space-shooter-scene-editor.png';
