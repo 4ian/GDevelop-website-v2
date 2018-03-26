@@ -61,6 +61,7 @@ const makeLocalizedPages = page => {
             translation: {
               ...locales[lang].messages,
               LANG_PATH_PREFIX: langPathPrefix ? '/' + langPathPrefix : '',
+              LANG_CODE: lang,
             },
           },
         },
@@ -80,6 +81,7 @@ const makeChooseLanguagePage = page => {
         en: {
           translation: {
             LANG_PATH_PREFIX: '',
+            LANG_CODE: 'en',
           },
         },
       },

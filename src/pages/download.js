@@ -54,16 +54,34 @@ export default class DownloadPage extends React.Component {
                 )}
               </Paragraph>
               <CenteredRow>
-                <BigButton to={config.gdevelopWindowsUrl}>
+                <BigButton
+                  to={config.gdevelopWindowsUrl}
+                  category="download"
+                  label="gd5-windows"
+                >
                   <FontAwesomeIcon icon={faWindows} /> Windows
                 </BigButton>
-                <BigButton to={config.gdevelopMacOSUrl}>
+                <BigButton
+                  to={config.gdevelopMacOSUrl}
+                  category="download"
+                  label="gd5-macos"
+                >
                   <FontAwesomeIcon icon={faApple} /> macOS
                 </BigButton>
-                <BigButton to={config.gdevelopLinuxUrl}>
+                <BigButton
+                  to={config.gdevelopLinuxUrl}
+                  category="download"
+                  label="gd5-linux"
+                >
                   <FontAwesomeIcon icon={faLinux} /> Linux
                 </BigButton>
-                <BigGhostButton to={config.onlineEditorUrl} target="_blank">
+                <BigGhostButton
+                  to={config.onlineEditorUrl}
+                  target="_blank"
+                  rel="noopener"
+                  category="webapp"
+                  label="webapp"
+                >
                   <FontAwesomeIcon icon={faChrome} /> {t('Try it online')}
                 </BigGhostButton>
               </CenteredRow>
@@ -122,12 +140,16 @@ export default class DownloadPage extends React.Component {
                 <BigButton
                   to="https://github.com/4ian/GD/releases/download/4.0.96/gd4096.exe"
                   target="_blank"
+                  category="download"
+                  label="win-installer"
                 >
                   {t('Windows')}
                 </BigButton>
                 <BigButton
                   to="http://software.opensuse.org/download.html?project=home%3Avictorlevasseur&amp;package=gdevelop"
                   target="_blank"
+                  category="download"
+                  label="linux-obs"
                 >
                   {t('OpenSUSE/Fedora/Arch')}
                 </BigButton>

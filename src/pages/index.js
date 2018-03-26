@@ -73,6 +73,8 @@ export default class IndexPage extends React.Component {
                       to={config.onlineEditorUrl}
                       alt="_blank"
                       rel="noopener"
+                      category="webapp"
+                      label="webapp"
                     >
                       {t('Try it online')}
                     </WhiteBigButton>
