@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const ISO6391 = require('iso-639-1');
 
 const i18nPath = path.join(__dirname, 'i18n');
 
@@ -19,7 +20,10 @@ const getLocaleMessages = langCode => {
   }
 };
 
+const getLocaleName = langCode => ISO6391.getName(langCode);
+
 module.exports = {
   getAllLocales,
   getLocaleMessages,
+  getLocaleName,
 };

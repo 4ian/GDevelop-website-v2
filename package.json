@@ -26,6 +26,7 @@
     "gatsby-transformer-remark": "^1.7.33",
     "gatsby-transformer-sharp": "^1.6.21",
     "i18next": "^10.6.0",
+    "iso-639-1": "^2.0.3",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-alice-carousel": "^1.9.1",

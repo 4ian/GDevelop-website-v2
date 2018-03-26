@@ -56,6 +56,9 @@ export default class FeaturesPage extends React.Component {
                 <BigButton to={config.crowdinUrl}>
                   {t('Help us by translating GDevelop!')}
                 </BigButton>
+                <BigGhostButton to={config.websiteCrowdinUrl}>
+                  {t('Translate the website')}
+                </BigGhostButton>
               </CenteredRow>
               <BigTitle>{t('Help to develop GDevelop')}</BigTitle>
               <Paragraph>
@@ -67,7 +70,7 @@ export default class FeaturesPage extends React.Component {
                 <BigButton to={config.githubUrl}>
                   {t('Contribute on GitHub')}
                 </BigButton>
-                <BigButton to={config.githubUrl}>
+                <BigButton to={config.websiteGithubUrl}>
                   {t('Edit the website on GitHub')}
                 </BigButton>
                 <BigGhostButton to={config.developmentRoadmapUrl}>

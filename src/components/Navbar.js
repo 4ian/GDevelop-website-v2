@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faBars from '@fortawesome/fontawesome-free-solid/faBars';
 import faChevronUp from '@fortawesome/fontawesome-free-solid/faChevronUp';
+import faLanguage from '@fortawesome/fontawesome-free-solid/faLanguage';
+import faGithub from '@fortawesome/fontawesome-free-brands/faGithub';
 
 import Link from './Link';
 import { media } from '../lib/media';
 import config from '../config';
 
-import github from '../img/github-icon.svg';
 import logo from '../img/logo-white.svg';
 import background from '../img/background.jpg';
 
@@ -186,8 +187,15 @@ class Navbar extends React.Component {
             <RightContainer>
               <NavLink to={config.wikiUrl}>{t('Tutorials')}</NavLink>
               <NavLink to="/download">{t('Download')}</NavLink>
-              <NavLink to={config.githubUrl}>
-                <Icon src={github} alt="Github" />
+              <NavLink to={config.githubUrl} title="GDevelop GitHub">
+                <FontAwesomeIcon icon={faGithub} />
+              </NavLink>
+              <NavLink
+                to="/choose-language"
+                noLangPathPrefix
+                title="Choose language"
+              >
+                <FontAwesomeIcon icon={faLanguage} />
               </NavLink>
             </RightContainer>
           </ItemsContainer>

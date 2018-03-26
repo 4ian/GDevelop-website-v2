@@ -14,7 +14,7 @@ const NotFoundPage = props => (
       <React.Fragment>
         <Helmet title="GDevelop - Page not found" />
         <Navbar t={t} noTransparency />
-        <Spacer height="300px" />
+        <Spacer height="200px" />
         <TransparentContainer>
           <BigTitle>Oops, looks like this page does not exist</BigTitle>
           <Paragraph>
@@ -22,7 +22,7 @@ const NotFoundPage = props => (
           </Paragraph>
           <Paragraph>Use the menu to navigate on GDevelop website.</Paragraph>
         </TransparentContainer>
-        <Spacer height="500px" />
+        <Spacer height="200px" />
         <Footer t={t} />
       </React.Fragment>
     )}

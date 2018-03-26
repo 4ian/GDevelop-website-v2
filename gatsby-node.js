@@ -1,9 +1,13 @@
 const chalk = require('chalk');
 const { createFilePath } = require('gatsby-source-filesystem');
-const { getAllLocales, getLocaleMessages } = require('./i18n-helpers');
+const {
+  getAllLocales,
+  getLocaleMessages,
+  getLocaleName,
+} = require('./i18n-helpers');
 
 const locales = {
-  en: { path: '', messages: {} },
+  en: { name: 'English', path: '', messages: {} },
 };
 getAllLocales().forEach(langCode => {
   let messages = getLocaleMessages(langCode);
@@ -12,20 +16,33 @@ getAllLocales().forEach(langCode => {
     messages = {};
   }
 
-  locales[langCode] = { path: langCode, messages };
+  locales[langCode] = {
+    path: langCode,
+    name: getLocaleName(langCode),
+    messages,
+  };
 });
 console.log(`${chalk.blue(Object.keys(locales).length)} locales loaded`);
 
 exports.onCreatePage = ({ page, boundActionCreators }) => {
   const { createPage, deletePage } = boundActionCreators;
 
-  return new Promise(resolve => {
-    const pages = makeLocalizedPages(page);
-    deletePage(page);
-    pages.map(page => createPage(page));
+  if (page.path.includes('choose-language')) {
+    return new Promise(resolve => {
+      deletePage(page);
+      createPage(makeChooseLanguagePage(page));
 
-    resolve();
-  });
+      resolve();
+    });
+  } else {
+    return new Promise(resolve => {
+      const pages = makeLocalizedPages(page);
+      deletePage(page);
+      pages.map(page => createPage(page));
+
+      resolve();
+    });
+  }
 };
 
 const makeLocalizedPages = page => {
@@ -52,6 +69,26 @@ const makeLocalizedPages = page => {
   });
 
   return pages;
+};
+
+const makeChooseLanguagePage = page => {
+  return {
+    ...page,
+    context: {
+      localeCode: 'en',
+      localeMessages: {
+        en: {
+          translation: {
+            LANG_PATH_PREFIX: '',
+          },
+        },
+      },
+      localeNamesAndPaths: Object.keys(locales).map(lang => ({
+        name: locales[lang].name,
+        path: locales[lang].path,
+      })),
+    },
+  };
 };
 
 exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
