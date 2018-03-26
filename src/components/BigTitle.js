@@ -8,10 +8,10 @@ const BigTitle = styled.h1`
   font-family: 'Asap', Arial, sans-serif;
   font-weight: 400;
   display: inline-block;
-  margin-top: 25px;
+  margin-top: 35px;
   margin-bottom: 15px;
 
-  color: #51509C;
+  color: #51509c;
 
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.05);
 

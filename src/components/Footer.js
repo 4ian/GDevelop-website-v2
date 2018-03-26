@@ -25,7 +25,7 @@ const FooterContainer = styled.div`
 const ContentContainer = styled.div`
   margin: auto;
   width: 720px;
-  padding: 10px;
+  padding: 20px;
   background-color: rgba(66, 51, 82, 0.88);
 
   ${media.tablet`
