@@ -84,11 +84,27 @@ export default ({ t }) => (
             {t('This website in your language')}
           </FooterLink>
           <FooterLink to="/download/">{t('Download the editor')}</FooterLink>
-          <FooterLink to={config.onlineEditorUrl} alt="_blank" rel="noopener">
+          <FooterLink
+            to={config.onlineEditorUrl}
+            alt="_blank"
+            rel="noopener"
+            category="webapp"
+            label="webapp"
+          >
             {t('Online game editor')}
           </FooterLink>
-          <FooterLink to={config.forumUrl}>{t('Community forums')}</FooterLink>
-          <FooterLink to={config.wikiUrl}>
+          <FooterLink
+            to={config.forumUrl}
+            category="forum"
+            label="footer-community-forum"
+          >
+            {t('Community forums')}
+          </FooterLink>
+          <FooterLink
+            to={config.wikiUrl}
+            category="wiki"
+            label="footer-documentation-tutorials"
+          >
             {t('Documentation & tutorials')}
           </FooterLink>
           <FooterLink to="/features/">{t('Features')}</FooterLink>
@@ -97,20 +113,38 @@ export default ({ t }) => (
           <FooterLink to="/education/">{t('Education')}</FooterLink>
           <FooterLink to="/games-showcase/">{t('Games showcase')}</FooterLink>
           <FooterLink to="/contribute/">{t('Contribute')}</FooterLink>
-          <FooterLink to={config.facebookPageUrl}>
+          <FooterLink
+            to={config.facebookPageUrl}
+            category="facebook"
+            label="footer-facebook-page"
+          >
             {t('Facebook page')}
           </FooterLink>
-          <FooterLink to={config.twitterUrl}>{t('Twitter')}</FooterLink>
+          <FooterLink
+            to={config.twitterUrl}
+            category="twitter"
+            label="footer-twitter-page"
+          >
+            {t('Twitter')}
+          </FooterLink>
         </Column>
       </Row>
       <CopyrightText>
         <Trans i18nKey="GDevelop was created [...][content]">
           GDevelop was created with ♥ by{' '}
-          <CopyrightLink href="https://www.linkedin.com/in/florianrival/">
+          <CopyrightLink
+            href="https://www.linkedin.com/in/florianrival/"
+            category="florian-rival"
+            label="footer-name"
+          >
             Florian Rival
           </CopyrightLink>{' '}
           with{' '}
-          <CopyrightLink href="https://github.com/4ian/GD/graphs/contributors/">
+          <CopyrightLink
+            href="https://github.com/4ian/GD/graphs/contributors/"
+            category="github"
+            label="footer-contributors"
+          >
             contributors
           </CopyrightLink>{' '}
           adding features, fixing bugs, sending new examples, improving the

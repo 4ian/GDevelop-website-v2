@@ -3,7 +3,15 @@ import GatsbyLink from 'gatsby-link';
 import { translate } from 'react-i18next';
 import { trackEvent } from '../lib/analytics';
 
-const Link = ({ to, t, noLangPathPrefix, category, label, ...otherProps }) =>
+const Link = ({
+  to,
+  t,
+  noLangPathPrefix,
+  category,
+  action,
+  label,
+  ...otherProps
+}) =>
   /^https?:\/\//.test(to) ? (
     <a
       href={to}
@@ -12,7 +20,7 @@ const Link = ({ to, t, noLangPathPrefix, category, label, ...otherProps }) =>
           trackEvent({
             category,
             label,
-            action: 'click',
+            action: action || 'click',
             t,
           });
       }}

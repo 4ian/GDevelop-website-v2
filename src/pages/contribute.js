@@ -57,10 +57,18 @@ export default class FeaturesPage extends React.Component {
                 )}
               </Paragraph>
               <CenteredRow>
-                <BigButton to={config.crowdinUrl}>
+                <BigButton
+                  to={config.crowdinUrl}
+                  category="crowdin"
+                  label="translate-gdevelop"
+                >
                   {t('Help us by translating GDevelop!')}
                 </BigButton>
-                <BigGhostButton to={config.websiteCrowdinUrl}>
+                <BigGhostButton
+                  to={config.websiteCrowdinUrl}
+                  category="crowdin"
+                  label="translate-website"
+                >
                   {t('Translate the website')}
                 </BigGhostButton>
               </CenteredRow>
@@ -71,13 +79,27 @@ export default class FeaturesPage extends React.Component {
                 )}
               </Paragraph>
               <CenteredRow>
-                <BigButton to={config.githubUrl}>
+                <BigButton
+                  to={config.githubUrl}
+                  category="github"
+                  action="opened"
+                  label="icon"
+                >
                   {t('Contribute on GitHub')}
                 </BigButton>
-                <BigButton to={config.websiteGithubUrl}>
+                <BigButton
+                  to={config.websiteGithubUrl}
+                  category="github-website"
+                  action="opened"
+                  label="icon"
+                >
                   {t('Edit the website on GitHub')}
                 </BigButton>
-                <BigGhostButton to={config.developmentRoadmapUrl}>
+                <BigGhostButton
+                  to={config.developmentRoadmapUrl}
+                  category="trello"
+                  label="development-roadmap"
+                >
                   {t('Check the development roadmap')}
                 </BigGhostButton>
               </CenteredRow>
@@ -88,10 +110,18 @@ export default class FeaturesPage extends React.Component {
                 )}
               </Paragraph>
               <CenteredRow>
-                <BigButton to={config.forumUrl}>
+                <BigButton
+                  to={config.forumUrl}
+                  category="forum"
+                  label="community-forum"
+                >
                   {t('Go to the community forum')}
                 </BigButton>
-                <BigButton to={config.discordUrl}>
+                <BigButton
+                  to={config.discordUrl}
+                  category="discord"
+                  label="discord-chat"
+                >
                   {t('Open the Discord chat')}
                 </BigButton>
               </CenteredRow>
@@ -99,10 +129,18 @@ export default class FeaturesPage extends React.Component {
                 {t('Follow GDevelop on Facebook and Twitter:')}
               </Paragraph>
               <CenteredRow>
-                <BigButton to={config.facebookPageUrl}>
+                <BigButton
+                  to={config.facebookPageUrl}
+                  category="facebook"
+                  label="facebook-page"
+                >
                   <FontAwesomeIcon icon={faFacebook} /> {t('Facebook page')}
                 </BigButton>
-                <BigButton to={config.twitterUrl}>
+                <BigButton
+                  to={config.twitterUrl}
+                  category="twitter"
+                  label="twitter-page"
+                >
                   <FontAwesomeIcon icon={faTwitter} /> {t('Twitter')}
                 </BigButton>
               </CenteredRow>
@@ -113,7 +151,11 @@ export default class FeaturesPage extends React.Component {
                 )}
               </Paragraph>
               <CenteredRow>
-                <BigButton to={config.wikiUrl}>
+                <BigButton
+                  to={config.wikiUrl}
+                  category="wiki"
+                  label="contribute-wiki"
+                >
                   {t('Contribute to the wiki')}
                 </BigButton>
               </CenteredRow>

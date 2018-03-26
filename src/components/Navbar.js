@@ -185,9 +185,21 @@ class Navbar extends React.Component {
               <NavLink to="/education">{t('Education')}</NavLink>
             </LeftContainer>
             <RightContainer>
-              <NavLink to={config.wikiUrl}>{t('Tutorials')}</NavLink>
+              <NavLink
+                to={config.wikiUrl}
+                category="wiki"
+                label="navbar-tutorials"
+              >
+                {t('Tutorials')}
+              </NavLink>
               <NavLink to="/download">{t('Download')}</NavLink>
-              <NavLink to={config.githubUrl} title="GDevelop GitHub">
+              <NavLink
+                to={config.githubUrl}
+                title="GDevelop GitHub"
+                category="github"
+                action="opened"
+                label="icon"
+              >
                 <FontAwesomeIcon icon={faGithub} />
               </NavLink>
               <NavLink
