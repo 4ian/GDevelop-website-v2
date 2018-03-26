@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
+    title: 'GDevelop - Make your own games with no programming skills',
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -26,7 +26,6 @@ module.exports = {
         short_name: 'GDevelop website',
         background_color: '#ffffff',
         theme_color: '#9746c1',
-        display: 'browser',
         icons: [
           {
             // Everything in /static will be copied to an equivalent
@@ -56,12 +55,6 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [],
-      },
-    },
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {

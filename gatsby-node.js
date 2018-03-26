@@ -9,9 +9,23 @@ const locales = [
     langCode: 'en',
     longLangCode: 'en-US',
     messages: {},
+    translationRatio: 1,
   },
   ...getAllLocales(),
-];
+].filter(locale => {
+  if (locale.translationRatio < 0.7) {
+    return false;
+  }
+
+  return true;
+});
+
+console.log(
+  chalk.blue(
+    `${locales.length} locales loaded:`,
+    locales.map(locale => locale.langCode)
+  )
+);
 
 exports.onCreatePage = ({ page, boundActionCreators }) => {
   const { createPage, deletePage } = boundActionCreators;

@@ -130,7 +130,7 @@ export default ({ t }) => (
         </Column>
       </Row>
       <CopyrightText>
-        {t('GDevelop was created with ♥ by')}{' '}
+        {t('GDevelop was created with love by')}{' '}
         <CopyrightLink
           href="https://www.linkedin.com/in/florianrival/"
           category="florian-rival"

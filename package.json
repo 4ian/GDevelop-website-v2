@@ -23,7 +23,6 @@
     "gatsby-plugin-twitter": "^1.0.20",
     "gatsby-remark-images": "^1.5.50",
     "gatsby-source-filesystem": "^1.5.23",
-    "gatsby-transformer-remark": "^1.7.33",
     "gatsby-transformer-sharp": "^1.6.21",
     "i18next": "^10.6.0",
     "iso-639-1": "^2.0.3",

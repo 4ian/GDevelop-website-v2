@@ -26,9 +26,18 @@ const getLocaleMessages = filename => {
 
 const getLocaleName = langCode => ISO6391.getName(langCode);
 
+const computeTranslationRatio = locale => {
+  const allMessages = Object.keys(locale.messages);
+  const sameAsKeyCount = allMessages.filter(key => locale.messages[key] === key)
+    .length;
+
+  return 1 - sameAsKeyCount / allMessages.length;
+};
+
 const getAllLocales = () =>
   fs
     .readdirSync(i18nPath)
+    .filter(filename => filename.indexOf('.json') !== -1)
     .filter(filename => filename !== 'catalog.json')
     .map(filename => ({
       filename,
@@ -40,6 +49,7 @@ const getAllLocales = () =>
       ...locale,
       path: locale.langCode,
       name: getLocaleName(locale.langCode),
+      translationRatio: computeTranslationRatio(locale),
     }));
 
 module.exports = {
