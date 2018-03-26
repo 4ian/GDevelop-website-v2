@@ -1,5 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook';
+import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter';
+
 import Navbar, { NavBarSpacer } from '../components/Navbar';
 import Footer from '../components/Footer';
 import PageContainer from '../lib/PageContainer';
@@ -89,6 +93,17 @@ export default class FeaturesPage extends React.Component {
                 </BigButton>
                 <BigButton to={config.discordUrl}>
                   {t('Open the Discord chat')}
+                </BigButton>
+              </CenteredRow>
+              <Paragraph>
+                {t('Follow GDevelop on Facebook and Twitter:')}
+              </Paragraph>
+              <CenteredRow>
+                <BigButton to={config.facebookPageUrl}>
+                  <FontAwesomeIcon icon={faFacebook} /> {t('Facebook page')}
+                </BigButton>
+                <BigButton to={config.twitterUrl}>
+                  <FontAwesomeIcon icon={faTwitter} /> {t('Twitter')}
                 </BigButton>
               </CenteredRow>
               <BigTitle>{t('Write tutorials, record videos')}</BigTitle>

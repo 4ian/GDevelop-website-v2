@@ -6,6 +6,8 @@ export default {
   discordUrl:
     'https://discordapp.com/channels/258623956158906368/377571085643677696',
   wikiUrl: 'http://wiki.compilgames.net',
+  facebookPageUrl: 'https://www.facebook.com/GameDevelop/',
+  twitterUrl: 'https://twitter.com/game_develop',
 
   websiteGithubUrl: 'https://github.com/4ian/GDevelop-website',
   websiteCrowdinUrl: 'https://crowdin.com/project/gdevelop-website',

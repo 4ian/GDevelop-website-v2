@@ -87,18 +87,20 @@ export default ({ t }) => (
           <FooterLink to={config.onlineEditorUrl} alt="_blank" rel="noopener">
             {t('Online game editor')}
           </FooterLink>
-          <FooterLink to="http://forum.compilgames.net">
-            {t('Community forums')}
-          </FooterLink>
+          <FooterLink to={config.forumUrl}>{t('Community forums')}</FooterLink>
           <FooterLink to={config.wikiUrl}>
             {t('Documentation & tutorials')}
           </FooterLink>
+          <FooterLink to="/features/">{t('Features')}</FooterLink>
         </Column>
         <Column>
-          <FooterLink to="/features/">{t('Features')}</FooterLink>
           <FooterLink to="/education/">{t('Education')}</FooterLink>
           <FooterLink to="/games-showcase/">{t('Games showcase')}</FooterLink>
           <FooterLink to="/contribute/">{t('Contribute')}</FooterLink>
+          <FooterLink to={config.facebookPageUrl}>
+            {t('Facebook page')}
+          </FooterLink>
+          <FooterLink to={config.twitterUrl}>{t('Twitter')}</FooterLink>
         </Column>
       </Row>
       <CopyrightText>
