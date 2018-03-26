@@ -16,7 +16,9 @@ const NotFoundPage = props => (
   <PageContainer {...props.pathContext}>
     {t => (
       <React.Fragment>
-        <Helmet title="GDevelop - Choose your language" />
+        <Helmet title="GDevelop - Choose your language">
+          <html lang="en" />
+        </Helmet>
         <Navbar t={t} noTransparency />
         <Spacer height="200px" />
         <TransparentContainer>

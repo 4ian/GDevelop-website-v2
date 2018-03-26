@@ -12,7 +12,9 @@ const NotFoundPage = props => (
   <PageContainer {...props.pathContext}>
     {t => (
       <React.Fragment>
-        <Helmet title="GDevelop - Page not found" />
+        <Helmet title="GDevelop - Page not found">
+          <html lang="en" />
+        </Helmet>
         <Navbar t={t} noTransparency />
         <Spacer height="200px" />
         <TransparentContainer>

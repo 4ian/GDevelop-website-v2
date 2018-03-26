@@ -32,7 +32,9 @@ export default class FeaturesPage extends React.Component {
               title={t(
                 'GDevelop - Create games without programming - Open source HTML5 and native game creator'
               )}
-            />
+            >
+              <html lang={this.props.pathContext.localeCode} />
+            </Helmet>
             <Navbar t={t} />
             <BannerContainer>
               <NavBarSpacer />
