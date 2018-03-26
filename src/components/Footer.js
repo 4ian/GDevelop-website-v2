@@ -5,22 +5,25 @@ import Link from './Link';
 import { media } from '../lib/media';
 import Row from './Grid/Row';
 import Column from './Grid/Column';
-import footerImage from '../img/background-platformer-level.png';
+import footerBackground from '../img/footer-background.jpg';
+import config from '../config';
 
 const FooterContainer = styled.div`
-  background-color: #f7f7f7;
-  background-image: url(${footerImage});
+  background-color: #423352;
+  background-image: url(${footerBackground});
   background-size: contain;
-  background-position: bottom;
+  background-position: top;
   background-repeat: repeat-x;
-  padding: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
 `;
 
 const ContentContainer = styled.div`
   margin: auto;
   width: 720px;
   padding: 10px;
-  background-color: rgba(247, 247, 247, 0.88);
+  background-color: rgba(66, 51, 82, 0.88);
 
   ${media.tablet`
     width: auto;
@@ -28,30 +31,39 @@ const ContentContainer = styled.div`
 `;
 
 const FooterText = styled.p`
+  text-align: center;
   font-size: 24px;
   font-family: 'Roboto', Arial, sans-serif;
-  color: #6a6a6a;
+  color: white;
   margin-bottom: 15px;
   margin-top: 10px;
 `;
 
 const FooterLink = styled(Link)`
   font-size: 20px;
-  color: #3c4698;
+  color: #387eca;
   font-weight: 600;
   display: block;
+
+  &:hover {
+    color: #66ace3;
+  }
 `;
 
 const CopyrightText = styled.p`
   font-size: 16px;
   font-family: 'Roboto', Arial, sans-serif;
-  color: #6a6a6a;
+  color: white;
   margin-top: 10px;
 `;
 
 const CopyrightLink = styled.a`
   font-weight: bold;
-  color: #3c4698;
+  color: #387eca;
+
+  &:hover {
+    color: #66ace3;
+  }
 `;
 
 export default ({ t }) => (
@@ -65,13 +77,13 @@ export default ({ t }) => (
       <Row>
         <Column>
           <FooterLink to="/download/">{t('Download the editor')}</FooterLink>
-          <FooterLink to="https://editor.gdevelop-app.com" alt="_blank" rel="noopener">
+          <FooterLink to={config.onlineEditorUrl} alt="_blank" rel="noopener">
             {t('Online game editor')}
           </FooterLink>
           <FooterLink to="http://forum.compilgames.net">
             {t('Community forums')}
           </FooterLink>
-          <FooterLink to="http://wiki.compilgames.net/doku.php/gdevelop5/start">
+          <FooterLink to={config.wikiUrl}>
             {t('Documentation & tutorials')}
           </FooterLink>
         </Column>
