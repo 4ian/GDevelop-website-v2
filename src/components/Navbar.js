@@ -112,13 +112,6 @@ const MenuIcon = styled.a`
   }
 `;
 
-const Icon = styled.img`
-  position: relative;
-  height: 25px;
-  width: 25px;
-  top: 5px;
-`;
-
 export const NavBarSpacer = styled.div`
   height: 60px;
 `;
