@@ -144,7 +144,7 @@ export default class IndexPage extends React.Component {
               />
               <ExplanationText>
                 {t(
-                  'When Space is pressed, the character animation and a sound are played. If a bomb touches the character, they are both destroyed.'
+                  'When Space is pressed, the character animation and a sound are played. If a bomb touches the character, they both are destroyed.'
                 )}
               </ExplanationText>
               <BigTitle>
