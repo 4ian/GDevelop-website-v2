@@ -1,28 +1,17 @@
 const chalk = require('chalk');
 const { createFilePath } = require('gatsby-source-filesystem');
-const {
-  getAllLocales,
-  getLocaleMessages,
-  getLocaleName,
-} = require('./i18n-helpers');
+const { getAllLocales } = require('./i18n-helpers');
 
-const locales = {
-  en: { name: 'English', path: '', messages: {} },
-};
-getAllLocales().forEach(langCode => {
-  let messages = getLocaleMessages(langCode);
-  if (!messages) {
-    console.log(chalk.red(`Unable to get messages for langCode=${langCode}`));
-    messages = {};
-  }
-
-  locales[langCode] = {
-    path: langCode,
-    name: getLocaleName(langCode),
-    messages,
-  };
-});
-console.log(`${chalk.blue(Object.keys(locales).length)} locales loaded`);
+const locales = [
+  {
+    name: 'English',
+    path: '',
+    langCode: 'en',
+    longLangCode: 'en-US',
+    messages: {},
+  },
+  ...getAllLocales(),
+];
 
 exports.onCreatePage = ({ page, boundActionCreators }) => {
   const { createPage, deletePage } = boundActionCreators;
@@ -47,21 +36,21 @@ exports.onCreatePage = ({ page, boundActionCreators }) => {
 
 const makeLocalizedPages = page => {
   const pages = [];
-  Object.keys(locales).map(lang => {
-    const langPathPrefix = locales[lang]['path'];
+  locales.map(locale => {
+    const langPathPrefix = locale.path;
     const path = langPathPrefix + page.path;
 
     pages.push({
       ...page,
       path,
       context: {
-        localeCode: lang,
+        localeCode: locale.langCode,
         localeMessages: {
-          [lang]: {
+          [locale.langCode]: {
             translation: {
-              ...locales[lang].messages,
+              ...locale.messages,
               LANG_PATH_PREFIX: langPathPrefix ? '/' + langPathPrefix : '',
-              LANG_CODE: lang,
+              LANG_CODE: locale.langCode,
             },
           },
         },
@@ -85,9 +74,9 @@ const makeChooseLanguagePage = page => {
           },
         },
       },
-      localeNamesAndPaths: Object.keys(locales).map(lang => ({
-        name: locales[lang].name,
-        path: locales[lang].path,
+      localeNamesAndPaths: locales.map(locale => ({
+        name: locale.name,
+        path: locale.path,
       })),
     },
   };

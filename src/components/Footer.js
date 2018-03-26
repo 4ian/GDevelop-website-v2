@@ -130,26 +130,27 @@ export default ({ t }) => (
         </Column>
       </Row>
       <CopyrightText>
-        <Trans i18nKey="GDevelop was created [...][content]">
-          GDevelop was created with ♥ by{' '}
-          <CopyrightLink
-            href="https://www.linkedin.com/in/florianrival/"
-            category="florian-rival"
-            label="footer-name"
-          >
-            Florian Rival
-          </CopyrightLink>{' '}
-          with{' '}
-          <CopyrightLink
-            href="https://github.com/4ian/GD/graphs/contributors/"
-            category="github"
-            label="footer-contributors"
-          >
-            contributors
-          </CopyrightLink>{' '}
-          adding features, fixing bugs, sending new examples, improving the
-          wiki, and helping each other on the forums
-        </Trans>
+        {t('GDevelop was created with ♥ by')}{' '}
+        <CopyrightLink
+          href="https://www.linkedin.com/in/florianrival/"
+          category="florian-rival"
+          label="footer-name"
+        >
+          Florian Rival
+        </CopyrightLink>
+      </CopyrightText>
+      <CopyrightText>
+        {t('Thanks to the')}{' '}
+        <CopyrightLink
+          href="https://github.com/4ian/GD/graphs/contributors/"
+          category="github"
+          label="footer-contributors"
+        >
+          contributors
+        </CopyrightLink>{' '}
+        {t(
+          'who added features, fixed bugs, sent new examples, wrote tutorials, and helped the community.'
+        )}
       </CopyrightText>
     </ContentContainer>
   </FooterContainer>
